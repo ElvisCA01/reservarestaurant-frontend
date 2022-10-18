@@ -1,0 +1,39 @@
+<app-header></app-header>
+<div class="card shadow-md rounded px-8 pt-6 pb-8 flex flex-col max-w-xl bg-gray-100 p-4 mx-auto my-10 w-auto">
+  <p class="text-3xl text-center">Tus datos</p>
+  <form class="example-form">
+    <table class="example-full-width" ><tr>
+      <td><mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>First name</mat-label>
+        <input matInput>
+      </mat-form-field></td>
+    </tr></table>
+    <p>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Address</mat-label>
+        <textarea matInput placeholder="Ex. 100 Main St"></textarea>
+      </mat-form-field>
+    </p>
+    <p>
+    <td><mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Número de tarjeta</mat-label>
+      <input matInput #postalCode maxlength="16" placeholder="Ex. 9410" value="9404">
+      <mat-hint align="end">{{postalCode.value.length}} / 4</mat-hint>
+    </mat-form-field></td>
+    </p>
+    <td><mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Codigo</mat-label>
+      <input matInput #postalCode maxlength="4" placeholder="Ex. 9410" value="9404">
+      <mat-hint align="end">{{postalCode.value.length}} / 4</mat-hint>
+    </mat-form-field></td>
+  </form>
+  <div class="">
+    <mat-form-field appearance="fill">
+      <mat-label>Elije una fecha</mat-label>
+      <input matInput [matDatepicker]="picker">
+      <mat-hint>MM/DD/AAAA</mat-hint>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </div>
+</div>

@@ -9,10 +9,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BookingPeopleComponent } from './pages/booking-people/booking-people.component';
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatRadioButton, MatRadioGroup, MatRadioModule} from "@angular/material/radio";
-import { PrincipalComponent } from './pages/principal/principal.component';
-import {FormsModule} from "@angular/forms";
-import { BookingPeopleEventComponent } from './pages/booking-people-event/booking-people-event.component';
+import {PrincipalComponent} from './pages/principal/principal.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {BookingPeopleEventComponent} from './pages/booking-people-event/booking-people-event.component';
 import {MatFormFieldModule} from "@angular/material/form-field";
+import { BookingPeopleDataComponent } from './pages/booking-people-data/booking-people-data.component';
+import {MatInputModule} from "@angular/material/input";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import { MatNativeDateModule } from '@angular/material/core';
+
 
 @NgModule({
   declarations: [
@@ -22,6 +27,7 @@ import {MatFormFieldModule} from "@angular/material/form-field";
     BookingPeopleComponent,
     PrincipalComponent,
     BookingPeopleEventComponent,
+    BookingPeopleDataComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,6 +37,10 @@ import {MatFormFieldModule} from "@angular/material/form-field";
     MatRadioModule,
     FormsModule,
     MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

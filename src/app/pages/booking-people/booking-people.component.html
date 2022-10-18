@@ -1,10 +1,10 @@
 <app-header></app-header>
-<div class="bg-white p-4 rounded-3xl max-w-lg mx-auto my-10">
+<div class="bg-gray-100 p-4 rounded-3xl max-w-lg mx-auto my-10">
+  <p class="text-3xl text-center">¿Cuantas personas vendrán?</p>
   <mat-radio-group
     aria-labelledby="example-radio-group-label"
     class="example-radio-group"
     [(ngModel)]="peoplechoosearray">
-    <p class="text-3xl">¿Cuantas personas vendrán?</p>
     <mat-radio-button class="p-2 text-3xl" *ngFor="let people of people" [value]="people">
       {{people}}
     </mat-radio-button>
