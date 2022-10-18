@@ -10,6 +10,9 @@ import { BookingPeopleComponent } from './pages/booking-people/booking-people.co
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatRadioButton, MatRadioGroup, MatRadioModule} from "@angular/material/radio";
 import { PrincipalComponent } from './pages/principal/principal.component';
+import {FormsModule} from "@angular/forms";
+import { BookingPeopleEventComponent } from './pages/booking-people-event/booking-people-event.component';
+import {MatFormFieldModule} from "@angular/material/form-field";
 
 @NgModule({
   declarations: [
@@ -18,6 +21,7 @@ import { PrincipalComponent } from './pages/principal/principal.component';
     FooterComponent,
     BookingPeopleComponent,
     PrincipalComponent,
+    BookingPeopleEventComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,6 +29,8 @@ import { PrincipalComponent } from './pages/principal/principal.component';
     BrowserAnimationsModule,
     MatCheckboxModule,
     MatRadioModule,
+    FormsModule,
+    MatFormFieldModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
