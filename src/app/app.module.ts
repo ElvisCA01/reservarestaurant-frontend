@@ -17,6 +17,7 @@ import { BookingPeopleDataComponent } from './pages/booking-people-data/booking-
 import {MatInputModule} from "@angular/material/input";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import { MatNativeDateModule } from '@angular/material/core';
+import { BookingPeopleFinishedComponent } from './pages/booking-people-finished/booking-people-finished.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     PrincipalComponent,
     BookingPeopleEventComponent,
     BookingPeopleDataComponent,
+    BookingPeopleFinishedComponent,
   ],
   imports: [
     BrowserModule,
