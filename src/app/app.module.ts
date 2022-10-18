@@ -7,6 +7,8 @@ import { HeaderComponent } from './shell/header/header.component';
 import { FooterComponent } from './shell/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BookingPeopleComponent } from './pages/booking-people/booking-people.component';
+import {MatCheckboxModule} from "@angular/material/checkbox";
+import {MatRadioButton, MatRadioGroup, MatRadioModule} from "@angular/material/radio";
 
 @NgModule({
   declarations: [
@@ -14,11 +16,14 @@ import { BookingPeopleComponent } from './pages/booking-people/booking-people.co
     HeaderComponent,
     FooterComponent,
     BookingPeopleComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatCheckboxModule,
+    MatRadioModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
