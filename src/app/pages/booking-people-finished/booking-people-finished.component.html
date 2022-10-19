@@ -1,15 +1,52 @@
 <app-header></app-header>
 <div class="card shadow-md px-8 pt-6 pb-8 flex flex-col max-w-xl bg-gray-100 p-4 mx-auto my-10 w-auto rounded-3xl">
   <div class="card shadow-md px-8 pt-6 pb-8 flex flex-col max-w-xl bg-gray-100 p-4 rounded-3xl">
-    <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Número de </mat-label>
-      <input matInput disabled value="Número ">
+    <div>
+      <mat-label class="mx-5">Número de reserva</mat-label>
+    <mat-form-field class="mx-5 pl-10" appearance="fill">
+      <mat-label></mat-label>
+      <input matInput disabled >
     </mat-form-field>
+    </div>
+    <div>
+      <mat-label class="mx-5">Horario</mat-label>
+      <mat-form-field class="mx-5 pl-10" appearance="fill">
+        <mat-label></mat-label>
+        <input matInput disabled >
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-label class="mx-5">Horario</mat-label>
+      <mat-form-field class="mx-5 pl-10" appearance="fill">
+        <mat-label></mat-label>
+        <input matInput disabled >
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-label class="mx-5">Tipo de evento</mat-label>
+      <mat-form-field class="mx-5 pl-10" appearance="fill">
+        <mat-label></mat-label>
+        <input matInput disabled >
+      </mat-form-field>
+    </div>
 
+    <div>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-20 h-20 mx-10">
+      <path stroke-linecap="round"  stroke-linejoin="round" d="M10.125 2.25h-4.5c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125v-9M10.125 2.25h.375a9 9 0 019 9v.375M10.125 2.25A3.375 3.375 0 0113.5 5.625v1.5c0 .621.504 1.125 1.125 1.125h1.5a3.375 3.375 0 013.375 3.375M9 15l2.25 2.25L15 12" />
+    </svg>
+      <div class="vertical">
+        <div><a class="ml-8">Recomendación</a></div>
+        <a class="ml-9">Tomale Foto!</a>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zM18.75 10.5h.008v.008h-.008V10.5z" />
+        </svg>
 
+      </div>
 
-
-
+    </div>
+    <button routerLink="/" mat-button color="primary" class="bg-gray-400 rounded-2xl p-1 mt-8">Terminar</button>
 
   </div>
+
 </div>
