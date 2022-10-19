@@ -18,6 +18,8 @@ import {MatInputModule} from "@angular/material/input";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import { MatNativeDateModule } from '@angular/material/core';
 import { BookingPeopleFinishedComponent } from './pages/booking-people-finished/booking-people-finished.component';
+import { BookingPeopleDateComponent } from './pages/booking-people-date/booking-people-date.component';
+import {MatCardModule} from "@angular/material/card";
 
 
 @NgModule({
@@ -30,6 +32,7 @@ import { BookingPeopleFinishedComponent } from './pages/booking-people-finished/
     BookingPeopleEventComponent,
     BookingPeopleDataComponent,
     BookingPeopleFinishedComponent,
+    BookingPeopleDateComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +46,7 @@ import { BookingPeopleFinishedComponent } from './pages/booking-people-finished/
     ReactiveFormsModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

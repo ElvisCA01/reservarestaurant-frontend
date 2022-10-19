@@ -5,6 +5,7 @@ import {PrincipalComponent} from "./pages/principal/principal.component";
 import {BookingPeopleEventComponent} from "./pages/booking-people-event/booking-people-event.component";
 import {BookingPeopleDataComponent} from "./pages/booking-people-data/booking-people-data.component";
 import {BookingPeopleFinishedComponent} from "./pages/booking-people-finished/booking-people-finished.component";
+import {BookingPeopleDateComponent} from "./pages/booking-people-date/booking-people-date.component";
 
 const routes: Routes = [
   { path: '', component: PrincipalComponent},
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'bookingPeopleEvent', component: BookingPeopleEventComponent},
   { path: 'bookingPeopleData', component: BookingPeopleDataComponent},
   { path: 'bookingPeopleFinished', component: BookingPeopleFinishedComponent},
+  { path: 'bookingPeopleDate', component: BookingPeopleDateComponent},
 
 ];
 
