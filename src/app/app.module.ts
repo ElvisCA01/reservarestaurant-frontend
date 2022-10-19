@@ -20,6 +20,14 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { BookingPeopleFinishedComponent } from './pages/booking-people-finished/booking-people-finished.component';
 import { BookingPeopleDateComponent } from './pages/booking-people-date/booking-people-date.component';
 import {MatCardModule} from "@angular/material/card";
+import { SearchBookingComponent } from './pages/search-booking/search-booking.component';
+import { HttpClientModule } from '@angular/common/http';
+import { SearchFilterPipe } from './pages/search-booking/filter-search.pipe';
+import { MatTableModule } from '@angular/material/table';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSelectModule } from '@angular/material/select';
+import {MatSortModule} from "@angular/material/sort";
+import {MatButtonModule} from "@angular/material/button";
 
 
 @NgModule({
@@ -33,6 +41,8 @@ import {MatCardModule} from "@angular/material/card";
     BookingPeopleDataComponent,
     BookingPeopleFinishedComponent,
     BookingPeopleDateComponent,
+    SearchBookingComponent,
+    SearchFilterPipe,
   ],
   imports: [
     BrowserModule,
@@ -47,6 +57,13 @@ import {MatCardModule} from "@angular/material/card";
     MatDatepickerModule,
     MatNativeDateModule,
     MatCardModule,
+    HttpClientModule,
+    MatTableModule,
+    MatIconModule,
+    MatSelectModule,
+    MatSortModule,
+    MatButtonModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
