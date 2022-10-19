@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookingPeopleEventComponent implements OnInit {
   peoplechoosearray: string;
-  people: string[] = ['Cumpleaños', 'Ninguna', 'Otra(especifica)'];
+  people: string[] = ['Cumpleaños', 'Ninguna', 'Otro(especifica)'];
 
   constructor() { }
 

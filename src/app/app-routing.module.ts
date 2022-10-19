@@ -4,12 +4,15 @@ import {BookingPeopleComponent} from "./pages/booking-people/booking-people.comp
 import {PrincipalComponent} from "./pages/principal/principal.component";
 import {BookingPeopleEventComponent} from "./pages/booking-people-event/booking-people-event.component";
 import {BookingPeopleDataComponent} from "./pages/booking-people-data/booking-people-data.component";
+import {BookingPeopleFinishedComponent} from "./pages/booking-people-finished/booking-people-finished.component";
 
 const routes: Routes = [
   { path: '', component: PrincipalComponent},
   { path: 'reservar', component: BookingPeopleComponent},
   { path: 'bookingPeopleEvent', component: BookingPeopleEventComponent},
-  { path: 'bookingPeopleData', component: BookingPeopleDataComponent}
+  { path: 'bookingPeopleData', component: BookingPeopleDataComponent},
+  { path: 'bookingPeopleFinished', component: BookingPeopleFinishedComponent},
+
 ];
 
 @NgModule({
