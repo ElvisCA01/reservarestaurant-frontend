@@ -8,16 +8,19 @@ import {BookingPeopleFinishedComponent} from "./pages/booking-people-finished/bo
 import {BookingPeopleDateComponent} from "./pages/booking-people-date/booking-people-date.component";
 import {SearchBookingComponent} from "./pages/search-booking/search-booking.component";
 import {BookingPeoplePaymentComponent} from "./pages/booking-people-payment/booking-people-payment.component";
+import {SearchBookingQueryComponent} from "./pages/search-booking-query/search-booking-query.component";
 
 const routes: Routes = [
   { path: '', component: PrincipalComponent},
-  { path: 'reservar', component: BookingPeopleComponent},
+  { path: 'bookingPeople', component: BookingPeopleComponent},
   { path: 'bookingPeopleEvent', component: BookingPeopleEventComponent},
   { path: 'bookingPeopleData', component: BookingPeopleDataComponent},
   { path: 'bookingPeopleFinished', component: BookingPeopleFinishedComponent},
   { path: 'bookingPeopleDate', component: BookingPeopleDateComponent},
-  { path: 'searchBooking', component: SearchBookingComponent},
   { path: 'bookingPeoplePayment', component: BookingPeoplePaymentComponent},
+  { path: 'searchBooking', component: SearchBookingComponent},
+  { path: 'searchBookingQuery', component: SearchBookingQueryComponent},
+
 
 ];
 
