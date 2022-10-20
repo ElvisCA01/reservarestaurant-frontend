@@ -7,6 +7,7 @@ import {BookingPeopleDataComponent} from "./pages/booking-people-data/booking-pe
 import {BookingPeopleFinishedComponent} from "./pages/booking-people-finished/booking-people-finished.component";
 import {BookingPeopleDateComponent} from "./pages/booking-people-date/booking-people-date.component";
 import {SearchBookingComponent} from "./pages/search-booking/search-booking.component";
+import {BookingPeoplePaymentComponent} from "./pages/booking-people-payment/booking-people-payment.component";
 
 const routes: Routes = [
   { path: '', component: PrincipalComponent},
@@ -16,7 +17,7 @@ const routes: Routes = [
   { path: 'bookingPeopleFinished', component: BookingPeopleFinishedComponent},
   { path: 'bookingPeopleDate', component: BookingPeopleDateComponent},
   { path: 'searchBooking', component: SearchBookingComponent},
-
+  { path: 'bookingPeoplePayment', component: BookingPeoplePaymentComponent},
 
 ];
 
