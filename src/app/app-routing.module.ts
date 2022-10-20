@@ -9,6 +9,8 @@ import {BookingPeopleDateComponent} from "./pages/booking-people-date/booking-pe
 import {SearchBookingComponent} from "./pages/search-booking/search-booking.component";
 import {BookingPeoplePaymentComponent} from "./pages/booking-people-payment/booking-people-payment.component";
 import {SearchBookingQueryComponent} from "./pages/search-booking-query/search-booking-query.component";
+import {UsComponent} from "./pages/us/us.component";
+import {LocationComponent} from "./pages/location/location.component";
 
 const routes: Routes = [
   { path: '', component: PrincipalComponent},
@@ -20,6 +22,9 @@ const routes: Routes = [
   { path: 'bookingPeoplePayment', component: BookingPeoplePaymentComponent},
   { path: 'searchBooking', component: SearchBookingComponent},
   { path: 'searchBookingQuery', component: SearchBookingQueryComponent},
+  { path: 'Us', component: UsComponent},
+  { path: 'Location', component: LocationComponent},
+
 
 
 ];

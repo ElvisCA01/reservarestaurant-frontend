@@ -30,6 +30,8 @@ import {MatSortModule} from "@angular/material/sort";
 import {MatButtonModule} from "@angular/material/button";
 import { SearchBookingQueryComponent } from './pages/search-booking-query/search-booking-query.component';
 import { BookingPeoplePaymentComponent } from './pages/booking-people-payment/booking-people-payment.component';
+import { UsComponent } from './pages/us/us.component';
+import { LocationComponent } from './pages/location/location.component';
 
 
 @NgModule({
@@ -47,6 +49,8 @@ import { BookingPeoplePaymentComponent } from './pages/booking-people-payment/bo
     SearchFilterPipe,
     SearchBookingQueryComponent,
     BookingPeoplePaymentComponent,
+    UsComponent,
+    LocationComponent,
   ],
   imports: [
     BrowserModule,
