@@ -11,7 +11,7 @@ Integrantes:
 
 Demo: https://magnificent-cajeta-c93806.netlify.app/
 Clickup: https://app.clickup.com/25729323/v/l/li/211557105
-
+Documento del proyecto: https://docs.google.com/document/d/173PQdjxrRCsrxlICv-E4AWHoVE8abE19/edit?usp=sharing&ouid=109881455585953101231&rtpof=true&sd=true
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.3.
 
