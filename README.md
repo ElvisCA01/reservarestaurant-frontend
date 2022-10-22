@@ -2,7 +2,7 @@
 
 El proyecto trata de hacer una aplicación de reservas en el restaurante Waka piedra ubicado en Moche en donde se agregara el apartado de reservar mesa para despues albergar una cierta cantidad de clientes seleccionados por el mismo cliente que realiza la reserva, se podra elegir el tipo de evento que los clientes tendran, ya sea una visita normal, para un cumpleaños o fiesta, opcionalmente se podra elegir el tipo de comida que los visitantes querrian comer para que el restaurante tenga listos los ingredientes para que tambien haya un buen gestionamiento del inventario así como el orden y funcionamiento del local.
 
-Integrantes:
+Integrantes:  
   -Valencia Asmat, David  
   -Rodriguez Iparraguirre, Enzo  
   -Calderon Aleman Elvis  
