@@ -1,4 +1,5 @@
 import { OnInit, Component } from '@angular/core';
+import {Title} from "@angular/platform-browser";
 
 
 export const MY_FORMATS = {
@@ -23,7 +24,9 @@ export const MY_FORMATS = {
 export class BookingPeopleDataComponent implements OnInit {
 
 
-  constructor() { }
+  constructor(private titulo:Title) {
+    titulo.setTitle('Tus datos')
+  }
 
   ngOnInit(): void {
 

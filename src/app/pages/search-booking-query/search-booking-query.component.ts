@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Title} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-search-booking-query',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchBookingQueryComponent implements OnInit {
 
-  constructor() { }
+  constructor(private titulo:Title) {
+    titulo.setTitle('Este es tu reserva!')
+  }
 
   ngOnInit(): void {
   }

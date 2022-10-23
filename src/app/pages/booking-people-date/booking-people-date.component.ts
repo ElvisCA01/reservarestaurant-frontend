@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Title} from "@angular/platform-browser";
 
 
 @Component({
@@ -10,7 +11,9 @@ export class BookingPeopleDateComponent implements OnInit {
   selected: Date | null;
 
 
-  constructor() { }
+  constructor(private titulo:Title) {
+      titulo.setTitle('Elige tu dia')
+  }
 
   ngOnInit(): void {
   }

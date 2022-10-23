@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Title} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-booking-people-event',
@@ -9,7 +10,9 @@ export class BookingPeopleEventComponent implements OnInit {
   peoplechoosearray: string;
   people: string[] = ['Cumpleaños', 'Ninguna', 'Otro(especifica)'];
 
-  constructor() { }
+  constructor(private titulo:Title) {
+    titulo.setTitle('Elige tu evento')
+  }
 
   ngOnInit(): void {
   }

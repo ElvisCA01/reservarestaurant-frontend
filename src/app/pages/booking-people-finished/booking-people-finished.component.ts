@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Title} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-booking-people-finished',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookingPeopleFinishedComponent implements OnInit {
 
-  constructor() { }
+  constructor(private titulo:Title) {
+    titulo.setTitle('Reserva finalizada!')
+  }
 
   ngOnInit(): void {
   }

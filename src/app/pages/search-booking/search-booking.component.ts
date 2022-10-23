@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { AfterViewInit, ViewChild } from '@angular/core';;
+import { AfterViewInit, ViewChild } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { animate, state, style, transition, trigger} from '@angular/animations';
+import {Title} from "@angular/platform-browser";
 
 interface Country {
   name: string;
@@ -40,7 +41,8 @@ export class SearchBookingComponent implements OnInit, AfterViewInit{
     const filterValue = searchTerm;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private titulo:Title) {
+    titulo.setTitle('Busca tu reserva!')
   }
 
   ngOnInit(): void {

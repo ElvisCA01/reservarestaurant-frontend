@@ -5,6 +5,7 @@ import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/
 import {MatDatepicker} from '@angular/material/datepicker';
 import {MY_FORMATS} from "../booking-people-data/booking-people-data.component";
 import moment, {Moment} from "moment/moment";
+import {Title} from "@angular/platform-browser";
 
 
 @Component({
@@ -32,7 +33,9 @@ export class BookingPeoplePaymentComponent implements OnInit {
     this.date.setValue(ctrlValue);
     datepicker.close();
   }
-  constructor() { }
+  constructor(private titulo:Title) {
+      titulo.setTitle('Realiza tu compra!')
+  }
 
   ngOnInit(): void {
   }
