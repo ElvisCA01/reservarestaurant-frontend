@@ -27,7 +27,7 @@ const routes: Routes = [
   { path: 'Us', component: UsComponent},
   { path: 'Location', component: LocationComponent},
   { path: 'bookingPeopleFood', component: BookingPeopleFoodComponent},
-  { path: 'Login', component: LoginComponent},
+  { path: 'login', component: LoginComponent},
 
 ];
 
