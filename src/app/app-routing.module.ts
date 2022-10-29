@@ -11,6 +11,7 @@ import {BookingPeoplePaymentComponent} from "./pages/booking-people-payment/book
 import {SearchBookingQueryComponent} from "./pages/search-booking-query/search-booking-query.component";
 import {UsComponent} from "./pages/us/us.component";
 import {LocationComponent} from "./pages/location/location.component";
+import { BookingPeopleFoodComponent } from './pages/booking-people-food/booking-people-food.component';
 
 const routes: Routes = [
   { path: '', component: PrincipalComponent},
@@ -24,7 +25,7 @@ const routes: Routes = [
   { path: 'searchBookingQuery', component: SearchBookingQueryComponent},
   { path: 'Us', component: UsComponent},
   { path: 'Location', component: LocationComponent},
-
+  { path: 'bookingPeopleFood', component: BookingPeopleFoodComponent},
 
 
 ];
