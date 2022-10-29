@@ -32,7 +32,7 @@ import { SearchBookingQueryComponent } from './pages/search-booking-query/search
 import { BookingPeoplePaymentComponent } from './pages/booking-people-payment/booking-people-payment.component';
 import { UsComponent } from './pages/us/us.component';
 import { LocationComponent } from './pages/location/location.component';
-import { LoginComponent } from './login/login.component';
+import { BookingPeopleFoodComponent } from './pages/booking-people-food/booking-people-food.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +51,7 @@ import { LoginComponent } from './login/login.component';
     BookingPeoplePaymentComponent,
     UsComponent,
     LocationComponent,
-    LoginComponent,
+    BookingPeopleFoodComponent,
   ],
   imports: [
     BrowserModule,
