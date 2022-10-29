@@ -12,6 +12,7 @@ import {SearchBookingQueryComponent} from "./pages/search-booking-query/search-b
 import {UsComponent} from "./pages/us/us.component";
 import {LocationComponent} from "./pages/location/location.component";
 import { BookingPeopleFoodComponent } from './pages/booking-people-food/booking-people-food.component';
+import {LoginComponent} from "./pages/login/login.component";
 
 const routes: Routes = [
   { path: '', component: PrincipalComponent},
@@ -26,7 +27,7 @@ const routes: Routes = [
   { path: 'Us', component: UsComponent},
   { path: 'Location', component: LocationComponent},
   { path: 'bookingPeopleFood', component: BookingPeopleFoodComponent},
-
+  { path: 'Login', component: LoginComponent},
 
 ];
 
