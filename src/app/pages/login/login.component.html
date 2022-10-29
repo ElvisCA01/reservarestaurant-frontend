@@ -5,9 +5,9 @@
     background: linear-gradient(rgba(2,2,2,.7),rgba(0,0,0,.7)),url(https://media-cdn.tripadvisor.com/media/photo-s/01/aa/90/4b/caption.jpg) center center;
   }
 </style>
-<div class="h-screen flex">
-  <div class="hidden lg:flex w-full lg:w-1/2 login_img_section
-          justify-around items-center">
+<div class="h-screen flex ">
+  <div class="hidden lg:flex w-full  lg:w-1/2 login_img_section
+          justify-around items-center bg-no-repeat">
     <div
       class="
                   bg-black
@@ -38,11 +38,8 @@
           <input class="pl-2 w-full outline-none border-none" type="password" name="password" id="password" placeholder="Contraseña" />
 
         </div>
-        <button type="submit" class="block w-full bg-green-600 mt-5 py-2 rounded-2xl hover:bg-green-700 hover:-translate-y-1 transition-all duration-500 text-white font-semibold mb-2">Iniciar Sesión</button>
+        <button routerLink="" type="submit" class="block w-full bg-green-600 mt-5 py-2 rounded-2xl hover:bg-green-700 hover:-translate-y-1 transition-all duration-500 text-white font-semibold mb-2">Iniciar Sesión</button>
         <div class="flex justify-between mt-4">
-          <span class="text-sm ml-2 hover:text-blue-500 cursor-pointer hover:-translate-y-1 duration-500 transition-all">No recuerdas contraseña ?</span>
-
-          <a href="#" class="text-sm ml-2 hover:text-blue-500 cursor-pointer hover:-translate-y-1 duration-500 transition-all">No estás registrado?</a>
         </div>
 
       </form>
