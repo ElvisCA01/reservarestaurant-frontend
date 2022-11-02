@@ -13,9 +13,12 @@ import {UsComponent} from "./pages/us/us.component";
 import {LocationComponent} from "./pages/location/location.component";
 import { BookingPeopleFoodComponent } from './pages/booking-people-food/booking-people-food.component';
 import {LoginComponent} from "./pages/login/login.component";
+import {BookingDateHourComponent} from "./pages/booking-date-hour/booking-date-hour.component";
+import {AdminBookingComponent} from "./pages/admin-booking/admin-booking.component";
 
 const routes: Routes = [
-  { path: '', component: PrincipalComponent},
+  { path: '', component: LoginComponent},
+  { path: 'Principal', component: PrincipalComponent},
   { path: 'bookingPeople', component: BookingPeopleComponent},
   { path: 'bookingPeopleEvent', component: BookingPeopleEventComponent},
   { path: 'bookingPeopleData', component: BookingPeopleDataComponent},
@@ -27,7 +30,8 @@ const routes: Routes = [
   { path: 'Us', component: UsComponent},
   { path: 'Location', component: LocationComponent},
   { path: 'bookingPeopleFood', component: BookingPeopleFoodComponent},
-  { path: 'Login', component: LoginComponent},
+  { path: 'bookingDateHour', component: BookingDateHourComponent},
+  { path: 'adminBooking', component: AdminBookingComponent}
 
 ];
 

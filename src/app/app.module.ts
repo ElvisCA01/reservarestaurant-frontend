@@ -1,39 +1,49 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './shell/header/header.component';
-import { FooterComponent } from './shell/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { BookingPeopleComponent } from './pages/booking-people/booking-people.component';
-import {MatCheckboxModule} from "@angular/material/checkbox";
-import {MatRadioButton, MatRadioGroup, MatRadioModule} from "@angular/material/radio";
-import {PrincipalComponent} from './pages/principal/principal.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {BookingPeopleEventComponent} from './pages/booking-people-event/booking-people-event.component';
-import {MatFormFieldModule} from "@angular/material/form-field";
 import { BookingPeopleDataComponent } from './pages/booking-people-data/booking-people-data.component';
-import {MatInputModule} from "@angular/material/input";
-import {MatDatepickerModule} from "@angular/material/datepicker";
-import { MatNativeDateModule } from '@angular/material/core';
-import { BookingPeopleFinishedComponent } from './pages/booking-people-finished/booking-people-finished.component';
-import { BookingPeopleDateComponent } from './pages/booking-people-date/booking-people-date.component';
-import {MatCardModule} from "@angular/material/card";
-import { SearchBookingComponent } from './pages/search-booking/search-booking.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchFilterPipe } from './pages/search-booking/filter-search.pipe';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+
+
+//material
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatInputModule} from "@angular/material/input";
+import {MatCardModule} from "@angular/material/card";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatRadioButton, MatRadioGroup, MatRadioModule} from "@angular/material/radio";
+import {MatCheckboxModule} from "@angular/material/checkbox";
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import {MatSortModule} from "@angular/material/sort";
 import {MatButtonModule} from "@angular/material/button";
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
+//componentes
+
+import {PrincipalComponent} from './pages/principal/principal.component';
+import { SearchBookingComponent } from './pages/search-booking/search-booking.component';
+import { BookingPeopleComponent } from './pages/booking-people/booking-people.component';
+import { HeaderComponent } from './shell/header/header.component';
+import { FooterComponent } from './shell/footer/footer.component';
+import {BookingPeopleEventComponent} from './pages/booking-people-event/booking-people-event.component';
+import { BookingPeopleFinishedComponent } from './pages/booking-people-finished/booking-people-finished.component';
+import { BookingPeopleDateComponent } from './pages/booking-people-date/booking-people-date.component';
 import { SearchBookingQueryComponent } from './pages/search-booking-query/search-booking-query.component';
 import { BookingPeoplePaymentComponent } from './pages/booking-people-payment/booking-people-payment.component';
 import { UsComponent } from './pages/us/us.component';
 import { LocationComponent } from './pages/location/location.component';
 import { BookingPeopleFoodComponent } from './pages/booking-people-food/booking-people-food.component';
 import {LoginComponent} from "./pages/login/login.component";
+import { BookingDateHourComponent } from './pages/booking-date-hour/booking-date-hour.component';
+import { AdminBookingComponent } from './pages/admin-booking/admin-booking.component';
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @NgModule({
   declarations: [
@@ -54,6 +64,8 @@ import {LoginComponent} from "./pages/login/login.component";
     LocationComponent,
     BookingPeopleFoodComponent,
     LoginComponent,
+    BookingDateHourComponent,
+    AdminBookingComponent,
   ],
   imports: [
     BrowserModule,
@@ -74,7 +86,8 @@ import {LoginComponent} from "./pages/login/login.component";
     MatSelectModule,
     MatSortModule,
     MatButtonModule,
-
+    MatSnackBarModule,
+    MatProgressSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
