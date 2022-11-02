@@ -49,6 +49,7 @@ import { BookingDateHourComponent } from './pages/booking-date-hour/booking-date
 import { AdminBookingComponent } from './pages/admin-booking/admin-booking.component';
 import { EditBookingComponent } from './pages/edit-booking/edit-booking.component';
 import { AddBookingComponent } from './pages/add-booking/add-booking.component';
+import { WatchBookingComponent } from './pages/watch-booking/watch-booking.component';
 
 
 
@@ -75,6 +76,7 @@ import { AddBookingComponent } from './pages/add-booking/add-booking.component';
     AdminBookingComponent,
     EditBookingComponent,
     AddBookingComponent,
+    WatchBookingComponent,
   ],
   imports: [
     BrowserModule,

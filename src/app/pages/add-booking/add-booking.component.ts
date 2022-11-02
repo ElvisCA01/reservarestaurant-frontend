@@ -51,5 +51,4 @@ export class AddBookingComponent implements OnInit {
       verticalPosition: "bottom"
     })
   }
-
 }

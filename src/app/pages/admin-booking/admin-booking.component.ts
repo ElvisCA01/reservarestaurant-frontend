@@ -5,6 +5,7 @@ import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
 import {AdminBookingService} from "../../services/admin-booking.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
+import {Router} from "@angular/router";
 
 
 
@@ -26,7 +27,7 @@ export class AdminBookingComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
 
 
-  constructor(private _tablesService:AdminBookingService, private _snackBar: MatSnackBar) { }
+  constructor(private _tablesService:AdminBookingService, private _snackBar: MatSnackBar, private router:Router) { }
 
 
 
@@ -51,6 +52,7 @@ export class AdminBookingComponent implements OnInit {
       this._tablesService.eliminarAllTableS(index);
       this.cargarTables();
   }
+
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;

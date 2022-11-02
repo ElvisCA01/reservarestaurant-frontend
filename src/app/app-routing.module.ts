@@ -35,7 +35,8 @@ const routes: Routes = [
   { path: 'bookingDateHour', component: BookingDateHourComponent},
   { path: 'adminBooking', component: AdminBookingComponent},
   { path: 'editBooking', component: EditBookingComponent},
-  { path: 'addBooking', component: AddBookingComponent}
+  { path: 'addBooking', component: AddBookingComponent},
+
 
 ];
 

@@ -1,5 +1,5 @@
 export interface tables{
-  idT: string;
+  id?: number;
   nombre: string;
   personas: number;
   eventos: string;
