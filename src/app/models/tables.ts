@@ -1,5 +1,8 @@
-export class tables{
+export interface tables{
   idT: string;
-  Personas: string;
-  Eventos: string;
+  nombre: string;
+  personas: number;
+  eventos: string;
+  fecha: String;
+  horario: string;
 }

@@ -24,9 +24,12 @@ import { MatSelectModule } from '@angular/material/select';
 import {MatSortModule} from "@angular/material/sort";
 import {MatButtonModule} from "@angular/material/button";
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatSnackBar} from "@angular/material/snack-bar";
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatPaginatorModule} from '@angular/material/paginator';
+
 
 //componentes
-
 import {PrincipalComponent} from './pages/principal/principal.component';
 import { SearchBookingComponent } from './pages/search-booking/search-booking.component';
 import { BookingPeopleComponent } from './pages/booking-people/booking-people.component';
@@ -43,7 +46,9 @@ import { BookingPeopleFoodComponent } from './pages/booking-people-food/booking-
 import {LoginComponent} from "./pages/login/login.component";
 import { BookingDateHourComponent } from './pages/booking-date-hour/booking-date-hour.component';
 import { AdminBookingComponent } from './pages/admin-booking/admin-booking.component';
-import {MatSnackBar} from "@angular/material/snack-bar";
+import { EditBookingComponent } from './pages/edit-booking/edit-booking.component';
+
+
 
 @NgModule({
   declarations: [
@@ -66,6 +71,7 @@ import {MatSnackBar} from "@angular/material/snack-bar";
     LoginComponent,
     BookingDateHourComponent,
     AdminBookingComponent,
+    EditBookingComponent,
   ],
   imports: [
     BrowserModule,
@@ -88,6 +94,8 @@ import {MatSnackBar} from "@angular/material/snack-bar";
     MatButtonModule,
     MatSnackBarModule,
     MatProgressSpinnerModule,
+    MatTooltipModule,
+    MatPaginatorModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
