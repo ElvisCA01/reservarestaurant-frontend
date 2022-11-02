@@ -47,6 +47,11 @@ export class AdminBookingComponent implements OnInit {
       verticalPosition: "bottom"
     })
   }
+  eliminarAllTables(index:number){
+      this._tablesService.eliminarAllTableS(index);
+      this.cargarTables();
+  }
+
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;

@@ -3,6 +3,6 @@ export interface tables{
   nombre: string;
   personas: number;
   eventos: string;
-  fecha: String;
+  fecha: string;
   horario: string;
 }

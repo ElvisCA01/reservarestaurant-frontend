@@ -9,7 +9,7 @@ import {Title} from "@angular/platform-browser";
 })
 export class BookingPeopleDateComponent implements OnInit {
   selected: Date | null;
-
+  currentDate: any = new Date();
 
   constructor(private titulo:Title) {
       titulo.setTitle('Elige tu dia')

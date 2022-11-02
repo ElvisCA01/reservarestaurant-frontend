@@ -27,6 +27,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 
 //componentes
@@ -47,6 +48,7 @@ import {LoginComponent} from "./pages/login/login.component";
 import { BookingDateHourComponent } from './pages/booking-date-hour/booking-date-hour.component';
 import { AdminBookingComponent } from './pages/admin-booking/admin-booking.component';
 import { EditBookingComponent } from './pages/edit-booking/edit-booking.component';
+import { AddBookingComponent } from './pages/add-booking/add-booking.component';
 
 
 
@@ -72,6 +74,7 @@ import { EditBookingComponent } from './pages/edit-booking/edit-booking.componen
     BookingDateHourComponent,
     AdminBookingComponent,
     EditBookingComponent,
+    AddBookingComponent,
   ],
   imports: [
     BrowserModule,
@@ -96,6 +99,7 @@ import { EditBookingComponent } from './pages/edit-booking/edit-booking.componen
     MatProgressSpinnerModule,
     MatTooltipModule,
     MatPaginatorModule,
+    MatGridListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

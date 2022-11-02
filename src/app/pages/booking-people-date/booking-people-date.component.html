@@ -3,9 +3,9 @@
       <p class="text-3xl text-center">Elige tu horario</p>
       <div >
         <mat-card class="demo-inline-calendar-card mx-auto">
-          <mat-calendar [(selected)]="selected" ></mat-calendar>
+          <mat-calendar [minDate]="currentDate" [(selected)]="selected" ></mat-calendar>
         </mat-card>
-        <p class="">Fecha seleccionada: {{selected}}</p>
+        <p >Fecha seleccionada:{{selected}}</p>
       </div>
       <div class="text-right text-2xl">
               <button routerLink="/bookingDateHour" mat-button color="primary" class="bg-gray-400 rounded-2xl p-1">Continuar</button>

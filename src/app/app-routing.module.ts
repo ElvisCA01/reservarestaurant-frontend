@@ -15,6 +15,8 @@ import { BookingPeopleFoodComponent } from './pages/booking-people-food/booking-
 import {LoginComponent} from "./pages/login/login.component";
 import {BookingDateHourComponent} from "./pages/booking-date-hour/booking-date-hour.component";
 import {AdminBookingComponent} from "./pages/admin-booking/admin-booking.component";
+import {EditBookingComponent} from "./pages/edit-booking/edit-booking.component";
+import {AddBookingComponent} from "./pages/add-booking/add-booking.component";
 
 const routes: Routes = [
   { path: '', component: LoginComponent},
@@ -31,7 +33,9 @@ const routes: Routes = [
   { path: 'Location', component: LocationComponent},
   { path: 'bookingPeopleFood', component: BookingPeopleFoodComponent},
   { path: 'bookingDateHour', component: BookingDateHourComponent},
-  { path: 'adminBooking', component: AdminBookingComponent}
+  { path: 'adminBooking', component: AdminBookingComponent},
+  { path: 'editBooking', component: EditBookingComponent},
+  { path: 'addBooking', component: AddBookingComponent}
 
 ];
 
