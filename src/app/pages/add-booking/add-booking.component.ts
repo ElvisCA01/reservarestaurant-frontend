@@ -20,7 +20,7 @@ export class AddBookingComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private _tableService:AdminBookingService, private router:Router, private _snackbar: MatSnackBar) {
     this.form = this.fb.group({
-      idT: ['',Validators.required, Validators.pattern("[0-9]")],
+      id: ['',Validators.required, Validators.pattern("[0-9]")],
       nombre: ['',Validators.required],
       evento: ['',Validators.required],
       personas: ['',Validators.required],
@@ -35,11 +35,11 @@ export class AddBookingComponent implements OnInit {
 
   agregarReserva(){
     const reserva: tables ={
-      idT: this.form.value.idT,
+      id: this.form.value.id,
       nombre: this.form.value.nombre,
       personas: this.form.value.personas,
       eventos: this.form.value.evento,
-      fecha: this.form.value.fech,
+      fecha: this.form.value.fecha,
       horario: this.form.value.horario,
     }
     this._tableService.agregarTableS(reserva);

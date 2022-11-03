@@ -27,5 +27,7 @@ export class AdminBookingService {
   agregarTableS(table: tables){
     this.listTables.unshift(table);
   }
-
+  getTableS(table:tables){
+    this.listTables.indexOf(table);
+  }
 }

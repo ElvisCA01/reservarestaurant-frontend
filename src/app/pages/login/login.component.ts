@@ -4,6 +4,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {timeout} from "rxjs";
 import {Router} from "@angular/router";
+import {tables} from "../../models/tables";
 
 @Component({
   selector: 'app-login',
@@ -27,17 +28,18 @@ export class LoginComponent implements OnInit {
   }
 
 
-  ingresar(){
+  ingresar() {
     const usuario = this.form.value.usuario;
     const password = this.form.value.password;
 
-    if(usuario=='admin' && password=='admin123' || usuario=='usuario' && password=='123'){
-        this.fakeLoading();
-    }else {
-        this.error();
-        this.form.reset();
+    if (usuario == 'admin' && password == 'admin123' || usuario == 'usuario' && password == '123') {
+      this.fakeLoading();
+    } else {
+      this.error();
+      this.form.reset();
     }
   }
+
 
   error(){
     this._snackBar.open('Usuario o contraseña invalidos','',{
@@ -48,16 +50,13 @@ export class LoginComponent implements OnInit {
   }
 
   fakeLoading(){
-
-
-
     this.loading = true;
     setTimeout(()=>{
 
       //redireccionamos a la pagina principal
       this.router.navigate(['Principal']);
       this.loading=false;
-    }, 1500)
+    }, 1000)
   }
 
 }

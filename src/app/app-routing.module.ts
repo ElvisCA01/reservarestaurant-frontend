@@ -17,6 +17,7 @@ import {BookingDateHourComponent} from "./pages/booking-date-hour/booking-date-h
 import {AdminBookingComponent} from "./pages/admin-booking/admin-booking.component";
 import {EditBookingComponent} from "./pages/edit-booking/edit-booking.component";
 import {AddBookingComponent} from "./pages/add-booking/add-booking.component";
+import {WatchBookingComponent} from "./pages/watch-booking/watch-booking.component";
 
 const routes: Routes = [
   { path: '', component: LoginComponent},
@@ -36,6 +37,7 @@ const routes: Routes = [
   { path: 'adminBooking', component: AdminBookingComponent},
   { path: 'editBooking', component: EditBookingComponent},
   { path: 'addBooking', component: AddBookingComponent},
+  { path: 'watchBooking', component: WatchBookingComponent},
 
 
 ];
