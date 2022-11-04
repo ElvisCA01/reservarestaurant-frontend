@@ -18,6 +18,7 @@ import {EditBookingComponent} from "./pages/edit-booking/edit-booking.component"
 import {AddBookingComponent} from "./pages/add-booking/add-booking.component";
 import {WatchBookingComponent} from "./pages/watch-booking/watch-booking.component";
 import {BookingPeopleFoodSnacksComponent} from "./pages/booking-people-food-snacks/booking-people-food-snacks.component";
+import {BookingPeopleFoodJuicesComponent} from "./pages/booking-people-food-juices/booking-people-food-juices.component";
 
 const routes: Routes = [
   { path: '', component: LoginComponent},
@@ -38,7 +39,7 @@ const routes: Routes = [
   { path: 'addBooking', component: AddBookingComponent},
   { path: 'watchBooking', component: WatchBookingComponent},
   { path: 'bookingPeopleFoodSnacks', component: BookingPeopleFoodSnacksComponent},
-
+  { path: 'bookingPeopleFoodJuices', component: BookingPeopleFoodJuicesComponent},
 
 ];
 
