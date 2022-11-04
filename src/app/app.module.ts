@@ -55,6 +55,7 @@ import { BookingPeopleFoodDishesComponent } from './pages/booking-people-food-di
 import { BookingPeopleFoodDessertsComponent } from './pages/booking-people-food-desserts/booking-people-food-desserts.component';
 import { BookingPeopleFoodSodasComponent } from './pages/booking-people-food-sodas/booking-people-food-sodas.component';
 import { BookingPeopleFoodSoupsComponent } from './pages/booking-people-food-soups/booking-people-food-soups.component';
+import { BookingPeopleFoodSeafoodComponent } from './pages/booking-people-food-seafood/booking-people-food-seafood.component';
 
 
 
@@ -87,6 +88,7 @@ import { BookingPeopleFoodSoupsComponent } from './pages/booking-people-food-sou
     BookingPeopleFoodDessertsComponent,
     BookingPeopleFoodSodasComponent,
     BookingPeopleFoodSoupsComponent,
+    BookingPeopleFoodSeafoodComponent,
   ],
   imports: [
     BrowserModule,
