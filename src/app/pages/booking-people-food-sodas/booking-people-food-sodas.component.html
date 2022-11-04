@@ -1,1 +1,18 @@
-<p>booking-people-food-sodas works!</p>
+<app-header></app-header>
+<div class="card shadow-md px-8 pt-6 pb-8 flex flex-col max-w-xl bg-gray-100 p-4 mx-auto my-10 w-auto rounded-3xl">
+  <p class="text-3xl text-center text-gray-500">GASEOSAS</p>
+  <mat-radio-group
+    aria-labelledby="example-radio-group-label"
+    class="example-radio-group"
+    [(ngModel)]="foodsodaschoosearray">
+    <mat-radio-button class="p-2 text-3xl text-gray-500" *ngFor="let foodsodas of foodsodas" [value]="foodsodas">
+      {{foodsodas}}
+    </mat-radio-button>
+    <div class="w-full m-5 border-black">
+      <textarea class="border-2" matInput placeholder="Especifique aqui la cantidad que desee del producto!"></textarea>
+    </div>
+  </mat-radio-group>
+  <div class="text-right text-lg">
+    <button routerLink="/bookingPeopleDate" mat-button color="primary" class="bg-gray-400 rounded-2xl p-1">Continuar</button>
+  </div>
+</div>
