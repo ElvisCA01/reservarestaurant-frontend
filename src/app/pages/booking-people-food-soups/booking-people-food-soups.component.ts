@@ -8,7 +8,7 @@ import {Title} from "@angular/platform-browser";
 })
 export class BookingPeopleFoodSoupsComponent implements OnInit {
   foodsoupschoosearray: string;
-  foodsoups: string[] = ['Sopa teologa S/.20', 'Sopa de pollo S/.15', 'Sopa wantan S/.15', 'No deseo'];
+  foodsoups: string[] = ['Sopa de verduras S/.15', 'Sopa de pollo S/.15', 'Sopa wantan S/.15', 'No deseo'];
   price: string[] =['S/.20', 'S/. 15','S/. 15'];
 
   constructor(private titulo:Title) {
