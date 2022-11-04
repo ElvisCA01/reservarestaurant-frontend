@@ -43,13 +43,13 @@ import { SearchBookingQueryComponent } from './pages/search-booking-query/search
 import { BookingPeoplePaymentComponent } from './pages/booking-people-payment/booking-people-payment.component';
 import { UsComponent } from './pages/us/us.component';
 import { LocationComponent } from './pages/location/location.component';
-import { BookingPeopleFoodComponent } from './pages/booking-people-food/booking-people-food.component';
 import {LoginComponent} from "./pages/login/login.component";
 import { BookingDateHourComponent } from './pages/booking-date-hour/booking-date-hour.component';
 import { AdminBookingComponent } from './pages/admin-booking/admin-booking.component';
 import { EditBookingComponent } from './pages/edit-booking/edit-booking.component';
 import { AddBookingComponent } from './pages/add-booking/add-booking.component';
 import { WatchBookingComponent } from './pages/watch-booking/watch-booking.component';
+import { BookingPeopleFoodSnacksComponent } from './pages/booking-people-food-snacks/booking-people-food-snacks.component';
 
 
 
@@ -70,13 +70,13 @@ import { WatchBookingComponent } from './pages/watch-booking/watch-booking.compo
     BookingPeoplePaymentComponent,
     UsComponent,
     LocationComponent,
-    BookingPeopleFoodComponent,
     LoginComponent,
     BookingDateHourComponent,
     AdminBookingComponent,
     EditBookingComponent,
     AddBookingComponent,
     WatchBookingComponent,
+    BookingPeopleFoodSnacksComponent,
   ],
   imports: [
     BrowserModule,
