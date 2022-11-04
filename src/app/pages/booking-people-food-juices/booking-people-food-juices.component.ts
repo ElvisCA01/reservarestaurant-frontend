@@ -7,7 +7,7 @@ import {Title} from "@angular/platform-browser";
   styleUrls: ['./booking-people-food-juices.component.scss']
 })
 export class BookingPeopleFoodJuicesComponent implements OnInit {
-  foodsjuiceschoosearray: string;
+  foodjuiceschoosearray: string;
   foodjuice: string[] = ['Chicha morada 2lt S/.7', 'Maracuyá 2lt S/.7', 'Limonada 2lt S/.7', 'Jugo de naranja 2lt  S/.7', 'No deseo'];
   price: string[] =['S/. 7', 'S/. 7','S/. 7','S/.7'];
 
