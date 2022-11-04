@@ -20,6 +20,7 @@ import {WatchBookingComponent} from "./pages/watch-booking/watch-booking.compone
 import {BookingPeopleFoodSnacksComponent} from "./pages/booking-people-food-snacks/booking-people-food-snacks.component";
 import {BookingPeopleFoodJuicesComponent} from "./pages/booking-people-food-juices/booking-people-food-juices.component";
 import { BookingPeopleFoodDishesComponent } from './pages/booking-people-food-dishes/booking-people-food-dishes.component';
+import { BookingPeopleFoodDessertsComponent } from './pages/booking-people-food-desserts/booking-people-food-desserts.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent},
@@ -42,6 +43,7 @@ const routes: Routes = [
   { path: 'bookingPeopleFoodSnacks', component: BookingPeopleFoodSnacksComponent},
   { path: 'bookingPeopleFoodJuices', component: BookingPeopleFoodJuicesComponent},
   { path: 'bookingPeopleFoodDishes', component: BookingPeopleFoodDishesComponent},
+  { path: 'bookingPeopleFoodDesserts', component: BookingPeopleFoodDessertsComponent},
 ];
 
 @NgModule({

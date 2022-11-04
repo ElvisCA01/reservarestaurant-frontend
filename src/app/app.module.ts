@@ -52,6 +52,8 @@ import { WatchBookingComponent } from './pages/watch-booking/watch-booking.compo
 import { BookingPeopleFoodSnacksComponent } from './pages/booking-people-food-snacks/booking-people-food-snacks.component';
 import { BookingPeopleFoodJuicesComponent } from './pages/booking-people-food-juices/booking-people-food-juices.component';
 import { BookingPeopleFoodDishesComponent } from './pages/booking-people-food-dishes/booking-people-food-dishes.component';
+import { BookingPeopleFoodDessertsComponent } from './pages/booking-people-food-desserts/booking-people-food-desserts.component';
+import { BookingPeopleFoodSodasComponent } from './pages/booking-people-food-sodas/booking-people-food-sodas.component';
 
 
 
@@ -81,6 +83,8 @@ import { BookingPeopleFoodDishesComponent } from './pages/booking-people-food-di
     BookingPeopleFoodSnacksComponent,
     BookingPeopleFoodJuicesComponent,
     BookingPeopleFoodDishesComponent,
+    BookingPeopleFoodDessertsComponent,
+    BookingPeopleFoodSodasComponent,
   ],
   imports: [
     BrowserModule,
