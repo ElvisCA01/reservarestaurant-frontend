@@ -32,6 +32,7 @@ export class SearchBookingComponent implements OnInit, AfterViewInit{
   @ViewChild(MatSort) sort!: MatSort;
 
 
+
   ngAfterViewInit(): void {
     this.dataSource.sort = this.sort;
   }
