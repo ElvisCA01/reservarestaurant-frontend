@@ -10,6 +10,6 @@
     </mat-radio-button>
   </mat-radio-group>
   <div class="text-right text-lg">
-    <button routerLink="/bookingPeopleFoodSodas" mat-button color="primary" class="bg-gray-400 rounded-2xl p-1">Continuar</button>
+    <button routerLink="/bookingPeopleFoodSodas" [disabled]="!foodjuiceschoosearray" mat-button color="primary" class="bg-gray-400 rounded-2xl p-1">Continuar</button>
   </div>
 </div>
