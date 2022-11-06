@@ -1,41 +1,46 @@
 <app-header></app-header>
 <div class="card shadow-md px-8 pt-6 pb-8 flex flex-col max-w-xl bg-gray-100 p-4 mx-auto my-10 w-auto rounded-3xl text-gray-500">
   <p class="text-3xl text-center">Tus datos bancarios</p>
-  <td><mat-form-field class="example-full-width" appearance="fill">
-  <mat-label>Nombre en la tarjeta</mat-label>
-  <input matInput>
-</mat-form-field></td>
-<p>
-<td>
-  <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>Número de la tarjeta</mat-label>
-    <input matInput #creditnumber maxlength="16" placeholder="Ejm 1234 56789 9101 1121" >
-    <mat-hint align="end">{{creditnumber.value.length}} / 16</mat-hint>
-  </mat-form-field>
-</td>
-</p>
-<table class="example-full-width">
-  <td>
-    <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Codigo de verificación</mat-label>
-      <input matInput #securitycode maxlength="4" placeholder="Ejm 9410">
-      <mat-hint align="end">{{securitycode.value.length}} / 4</mat-hint>
-    </mat-form-field>
-  </td>
+  <form [formGroup]="form">
+    <td>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Nombre en la tarjeta</mat-label>
+        <input matInput autocomplete="off" formControlName="nombreTarjeta">
+      </mat-form-field>
+    </td>
+    <div>
+      <td>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Número de la tarjeta</mat-label>
+          <input matInput #creditnumber maxlength="16" placeholder="Ejm 1234 56789 9101 1121" formControlName="numeroTarjeta">
+          <mat-hint align="end">{{creditnumber.value.length}} / 16</mat-hint>
+        </mat-form-field>
+      </td>
+    </div>
+  <table class="example-full-width">
+    <td>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Codigo de verificación</mat-label>
+        <input matInput #securitycode maxlength="4" placeholder="Ejm 9410" formControlName="codigoVerificacion">
+        <mat-hint align="end">{{securitycode.value.length}} / 4</mat-hint>
+      </mat-form-field>
+    </td>
 
-  <mat-form-field appearance="fill">
-    <mat-label>Mes y año</mat-label>
-    <input matInput [matDatepicker]="dp" [formControl]="date" min="{{currentDate | date:'yyyy-MM'}}">
-    <mat-hint>MM/AAAA</mat-hint>
-    <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
-    <mat-datepicker #dp
-                    startView="multi-year"
-                    (monthSelected)="setMonthAndYear($event, dp)"
-                    panelClass="example-month-picker">
-    </mat-datepicker>
-  </mat-form-field>
-</table>
-  <div class="text-right text-2xl">
-    <button routerLink="/bookingPeopleFinished" mat-button color="primary" class="bg-gray-400 rounded-2xl p-1">Continuar</button>
-  </div>
+    <mat-form-field class="mx-5" appearance="fill">
+      <mat-label>Mes y año</mat-label>
+      <input matInput [matDatepicker]="dp" [formControl]="date" min="{{currentDate | date:'yyyy-MM'}}">
+      <mat-hint>MM/AAAA</mat-hint>
+      <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+      <mat-datepicker #dp
+                      startView="multi-year"
+                      (monthSelected)="setMonthAndYear($event, dp)"
+                      panelClass="example-month-picker">
+      </mat-datepicker>
+    </mat-form-field>
+  </table>
+    <div class="text-right text-2xl">
+      <button [disabled]="form.invalid" routerLink="/bookingPeopleFinished" mat-button color="primary" class="bg-gray-400 rounded-2xl p-1">Continuar</button>
+    </div>
+  </form>
+
 </div>
