@@ -4,6 +4,7 @@ import {tables} from "../../models/tables";
 import {AdminBookingService} from "../../services/admin-booking.service";
 import {Router} from "@angular/router";
 import {MatSnackBar} from "@angular/material/snack-bar";
+import {Title} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-add-booking',
@@ -18,7 +19,8 @@ export class AddBookingComponent implements OnInit {
   form: FormGroup;
 
 
-  constructor(private fb: FormBuilder, private _tableService:AdminBookingService, private router:Router, private _snackbar: MatSnackBar) {
+  constructor(private titulo:Title,private fb: FormBuilder, private _tableService:AdminBookingService, private router:Router, private _snackbar: MatSnackBar) {
+    this.titulo.setTitle('Añadir Reserva manualmente');
     this.form = this.fb.group({
       id: ['',Validators.required, Validators.pattern("[0-9]")],
       nombre: ['',Validators.required],

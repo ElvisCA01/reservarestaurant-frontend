@@ -7,8 +7,7 @@ import {AdminBookingService} from "../../services/admin-booking.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {Router} from "@angular/router";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-
-
+import {Title} from "@angular/platform-browser";
 
 
 @Component({
@@ -28,7 +27,8 @@ export class AdminBookingComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
 
 
-  constructor(private _tablesService:AdminBookingService, private _snackBar: MatSnackBar, private router:Router, private fb:FormBuilder) {
+  constructor(private titulo:Title,private _tablesService:AdminBookingService, private _snackBar: MatSnackBar, private router:Router, private fb:FormBuilder) {
+    this.titulo.setTitle('CRUD Administación')
     this.form = this.fb.group({
       id: ['',Validators.required, Validators.pattern("[0-9]")],
       nombre: ['',Validators.required],
