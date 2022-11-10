@@ -1,0 +1,51 @@
+<h1 mat-dialog-title>
+  Agrega una reserva
+</h1>
+<div mat-dialog-content>
+        <form [formGroup]="form" (ngSubmit)="saveBooking()">
+          <!--idT-->
+          <mat-form-field class="w-10/12" >
+            <mat-label>ID</mat-label>
+            <input matInput autocomplete="off" formControlName="id">
+          </mat-form-field>
+          <!--Nombre-->
+          <mat-form-field class="w-10/12" >
+            <mat-label>Nombre</mat-label>
+            <input matInput autocomplete="off" formControlName="nombre">
+          </mat-form-field>
+          <!--Evento-->
+          <mat-form-field class="w-10/12">
+            <mat-label>Motivo del Evento</mat-label>
+            <input matInput autocomplete="off" formControlName="evento">
+          </mat-form-field>
+          <!--Fecha-->
+          <mat-form-field class="w-10/12 " appearance="fill">
+            <mat-label>Elige una fecha</mat-label>
+            <input matInput [min]="currentDate" [matDatepicker]="picker" formControlName="fecha" autocomplete="off">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          <!--Personas-->
+          <mat-form-field appearance="fill" class="w-10/12">
+            <mat-label>Elige el número de personas</mat-label>
+            <mat-select formControlName="personas">
+              <mat-option *ngFor="let personas of personas" [value]="personas">
+                {{personas}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <!--Horario-->
+          <mat-form-field appearance="fill" class="w-10/12 my-8">
+            <mat-label>Horario</mat-label>
+            <mat-select formControlName="horario">
+              <mat-option *ngFor="let horario of horario" [value]="horario">
+                {{horario}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <div mat-dialog-actions [align]="'end'">
+            <button mat-dialog-close="" mat-raised-button style="margin-right: 20px">Cerrar</button>
+            <button [disabled]="form.invalid" type="submit" mat-raised-button color="primary" >Aceptar</button>
+          </div>
+        </form>
+</div>

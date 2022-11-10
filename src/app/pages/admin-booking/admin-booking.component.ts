@@ -8,7 +8,8 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 import {Router} from "@angular/router";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Title} from "@angular/platform-browser";
-
+import {MatDialog,MAT_DIALOG_DATA} from "@angular/material/dialog";
+import {DialogComponent} from "../../UI/dialog/dialog.component";
 
 @Component({
   selector: 'app-admin-booking',
@@ -16,10 +17,11 @@ import {Title} from "@angular/platform-browser";
   styleUrls: ['./admin-booking.component.scss']
 })
 export class AdminBookingComponent implements OnInit {
-  listTables: tables[] = [];
   displayedColumns: string[] = ['id', 'nombre', 'personas', 'evento','fecha','horario','acciones'];
-  dataSource: MatTableDataSource<any>;
-
+  dataSource!: tables[];
+  @ViewChild(MatPaginator) _paginator!:MatPaginator;
+  @ViewChild(MatSort) _sort!:MatSort;
+  finalData:any
   form: FormGroup;
 
 
@@ -27,7 +29,7 @@ export class AdminBookingComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
 
 
-  constructor(private titulo:Title,private _tablesService:AdminBookingService, private _snackBar: MatSnackBar, private router:Router, private fb:FormBuilder) {
+  constructor(private dialog: MatDialog,private titulo:Title,private _tablesService:AdminBookingService, private _snackBar: MatSnackBar, private router:Router, private fb:FormBuilder,private api:AdminBookingService) {
     this.titulo.setTitle('CRUD Administación')
     this.form = this.fb.group({
       id: ['',Validators.required, Validators.pattern("[0-9]")],
@@ -42,49 +44,45 @@ export class AdminBookingComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.cargarTables();
+    this.CargarBookings();
   }
 
-  cargarTables(){
-    this.listTables = this._tablesService.getTables();
-    this.dataSource = new MatTableDataSource(this.listTables);
-  }
-  eliminarTable(index:number){
-    this._tablesService.eliminarTableS(index);
-    this.cargarTables();
-    this._snackBar.open('Reserva Eliminada','',{
-      duration: 5000,
-      horizontalPosition: 'center',
-      verticalPosition: "bottom"
+
+  openDialog(id:any) {
+   const _dialog = this.dialog.open(DialogComponent,{
+     width:'60%',
+     data:{
+       id:id
+     }
+   })
+    _dialog.afterClosed().subscribe(r=>{
+      this.CargarBookings();
     })
   }
-  eliminarAllTables(index:number){
-      this._tablesService.eliminarAllTableS(index);
-      this.cargarTables();
-  }
-  getTable(index:tables){
-    this._tablesService.getTableS(index);
-    console.log(index)
-    this.router.navigate(['/watchBooking']);
 
-  }
-
-  editTable(index:tables){
-    this.router.navigate(['/editBooking'])
-    this._tablesService.getTableS(index);
-    this.router.navigate(['/editBooking'])
-
+  CargarBookings(){
+    this.api.getBookings().subscribe(response=>{
+      this.dataSource=response;
+      this.finalData=new MatTableDataSource<tables>(this.dataSource);
+      this.finalData.paginator=this._paginator;
+      this.finalData.sort=this._sort;
+    })
   }
 
+  editBooking(id:any){
+    this.openDialog(id);
+  }
 
+  removeBooking(id:any){
+    this.api.removeBookingById(id)
+      .subscribe(r=>{
+        this.CargarBookings();
+      })
+  }
   ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
-
   }
-
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+    this.finalData.filter = filterValue.trim().toLowerCase();
   }
 }

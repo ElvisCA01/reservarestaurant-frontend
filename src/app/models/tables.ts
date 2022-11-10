@@ -1,8 +1,8 @@
 export interface tables{
-  id?: number;
+  id: number;
   nombre: string;
   personas: number;
-  eventos: string;
+  evento: string;
   fecha: string;
   horario: string;
 }

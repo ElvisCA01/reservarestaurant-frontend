@@ -1,0 +1,52 @@
+{
+  "BookingList": [
+    {
+      "id": 1,
+      "nombre": "Mark",
+      "evento": "Cumpleaños",
+      "personas": "03",
+      "fecha": "2022-11-17T05:00:00.000Z",
+      "horario": "1:30 pm a 3:00 pm"
+    },
+    {
+      "id": 2,
+      "nombre": "Juanito",
+      "evento": "Nada",
+      "personas": "04",
+      "fecha": "2022-11-16T05:00:00.000Z",
+      "horario": "1:30 pm a 3:00 pm"
+    },
+    {
+      "nombre": "Tatiana",
+      "evento": "Quiero tener una fiesta de cumpleaños",
+      "personas": "05",
+      "fecha": "2022-11-11T05:00:00.000Z",
+      "horario": "3:30 pm a 5:30 pm",
+      "id": 3
+    },
+    {
+      "id": 4,
+      "nombre": "Juan",
+      "evento": "Cena normal",
+      "personas": "01",
+      "fecha": "2022-11-16T05:00:00.000Z",
+      "horario": "11:30 pm a 1:00pm"
+    },
+    {
+      "nombre": "Nicolas",
+      "evento": "Ni idea",
+      "personas": "02",
+      "fecha": "2022-11-16T05:00:00.000Z",
+      "horario": "3:30 pm a 5:30 pm",
+      "id": 5
+    },
+    {
+      "nombre": "Liz",
+      "evento": "Un cumpleaños",
+      "personas": "05",
+      "fecha": "2023-01-18T05:00:00.000Z",
+      "horario": "3:30 pm a 5:30 pm",
+      "id": 6
+    }
+  ]
+}

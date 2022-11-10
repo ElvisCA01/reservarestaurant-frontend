@@ -28,6 +28,7 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 //componentes
@@ -47,7 +48,6 @@ import {LoginComponent} from "./pages/login/login.component";
 import { BookingDateHourComponent } from './pages/booking-date-hour/booking-date-hour.component';
 import { AdminBookingComponent } from './pages/admin-booking/admin-booking.component';
 import { EditBookingComponent } from './pages/edit-booking/edit-booking.component';
-import { AddBookingComponent } from './pages/add-booking/add-booking.component';
 import { WatchBookingComponent } from './pages/watch-booking/watch-booking.component';
 import { BookingPeopleFoodSnacksComponent } from './pages/booking-people-food-snacks/booking-people-food-snacks.component';
 import { BookingPeopleFoodJuicesComponent } from './pages/booking-people-food-juices/booking-people-food-juices.component';
@@ -56,6 +56,7 @@ import { BookingPeopleFoodDessertsComponent } from './pages/booking-people-food-
 import { BookingPeopleFoodSodasComponent } from './pages/booking-people-food-sodas/booking-people-food-sodas.component';
 import { BookingPeopleFoodSoupsComponent } from './pages/booking-people-food-soups/booking-people-food-soups.component';
 import { BookingPeopleFoodSeafoodComponent } from './pages/booking-people-food-seafood/booking-people-food-seafood.component';
+import { DialogComponent } from './UI/dialog/dialog.component';
 
 
 
@@ -80,7 +81,6 @@ import { BookingPeopleFoodSeafoodComponent } from './pages/booking-people-food-s
     BookingDateHourComponent,
     AdminBookingComponent,
     EditBookingComponent,
-    AddBookingComponent,
     WatchBookingComponent,
     BookingPeopleFoodSnacksComponent,
     BookingPeopleFoodJuicesComponent,
@@ -89,6 +89,7 @@ import { BookingPeopleFoodSeafoodComponent } from './pages/booking-people-food-s
     BookingPeopleFoodSodasComponent,
     BookingPeopleFoodSoupsComponent,
     BookingPeopleFoodSeafoodComponent,
+    DialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -114,6 +115,7 @@ import { BookingPeopleFoodSeafoodComponent } from './pages/booking-people-food-s
     MatTooltipModule,
     MatPaginatorModule,
     MatGridListModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
