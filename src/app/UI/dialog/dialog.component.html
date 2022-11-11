@@ -16,7 +16,7 @@
           <!--Evento-->
           <mat-form-field class="w-10/12">
             <mat-label>Motivo del Evento</mat-label>
-            <input matInput autocomplete="off" formControlName="evento">
+            <textarea matInput autocomplete="off" formControlName="evento"></textarea>
           </mat-form-field>
           <!--Fecha-->
           <mat-form-field class="w-10/12 " appearance="fill">
@@ -35,7 +35,7 @@
             </mat-select>
           </mat-form-field>
           <!--Horario-->
-          <mat-form-field appearance="fill" class="w-10/12 my-8">
+          <mat-form-field appearance="fill" class="w-10/12">
             <mat-label>Horario</mat-label>
             <mat-select formControlName="horario">
               <mat-option *ngFor="let horario of horario" [value]="horario">
