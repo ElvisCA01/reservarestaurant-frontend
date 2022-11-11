@@ -29,7 +29,7 @@ export class AdminBookingComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
 
 
-  constructor(private dialog: MatDialog,private titulo:Title,private _tablesService:AdminBookingService, private _snackBar: MatSnackBar, private router:Router, private fb:FormBuilder,private api:AdminBookingService) {
+  constructor(private _snackbar:MatSnackBar,private dialog: MatDialog,private titulo:Title,private _tablesService:AdminBookingService, private _snackBar: MatSnackBar, private router:Router, private fb:FormBuilder,private api:AdminBookingService) {
     this.titulo.setTitle('CRUD Administación')
     this.form = this.fb.group({
       id: ['',Validators.required, Validators.pattern("[0-9]")],
@@ -76,6 +76,11 @@ export class AdminBookingComponent implements OnInit {
   removeBooking(id:any){
     this.api.removeBookingById(id)
       .subscribe(r=>{
+        this._snackbar.open('Usuario eliminado'),'',{
+          duration:1500,
+          horizontalPosition: 'Center',
+          verticalPosition: 'bottom'
+        }
         this.CargarBookings();
       })
   }

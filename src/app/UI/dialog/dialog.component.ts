@@ -27,7 +27,7 @@ export class DialogComponent implements OnInit {
 
 
   constructor(private _snackBar: MatSnackBar,private fb:FormBuilder, private api:AdminBookingService,private dialog: MatDialog,
-              @Inject(MAT_DIALOG_DATA) public data:any) {}
+              @Inject(MAT_DIALOG_DATA) public data:any, private _snackbar:MatSnackBar) {}
 
 
   ngOnInit(): void {
@@ -54,13 +54,21 @@ export class DialogComponent implements OnInit {
         this.api.updateBooking(editId,this.form.getRawValue())
           .subscribe(response =>{
             this.closeDialog();
-            alert("Editado.")
+            this._snackbar.open('Usuario editado'),'',{
+              duration:1500,
+              horizontalPosition: 'Center',
+              verticalPosition: 'bottom'
+            }
           });
       }else{
         this.api.agregarBooking(this.form.value)
           .subscribe(response =>{
             this.closeDialog();
-            alert("Guardado.")
+            this._snackbar.open('Usuario agregado correctamente'),'',{
+              duration:1500,
+              horizontalPosition: 'Center',
+              verticalPosition: 'bottom'
+            }
           });
       }
     }
