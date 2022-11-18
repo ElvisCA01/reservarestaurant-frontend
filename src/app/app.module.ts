@@ -57,6 +57,7 @@ import { BookingPeopleFoodSodasComponent } from './pages/booking-people-food-sod
 import { BookingPeopleFoodSoupsComponent } from './pages/booking-people-food-soups/booking-people-food-soups.component';
 import { BookingPeopleFoodSeafoodComponent } from './pages/booking-people-food-seafood/booking-people-food-seafood.component';
 import { DialogComponent } from './UI/dialog/dialog.component';
+import { Dialog2Component } from './UI/dialog2/dialog2.component';
 
 
 
@@ -90,6 +91,7 @@ import { DialogComponent } from './UI/dialog/dialog.component';
     BookingPeopleFoodSoupsComponent,
     BookingPeopleFoodSeafoodComponent,
     DialogComponent,
+    Dialog2Component,
   ],
   imports: [
     BrowserModule,

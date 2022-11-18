@@ -9,21 +9,38 @@ import {Observable} from "rxjs";
 export class AdminBookingService {
 
   constructor(private http:HttpClient) { }
-    apiurl = 'http://localhost:3000/BookingList/';
+    apiurlReservas = 'http://localhost:3000/BookingList/';
+    apiurlComidas  = 'http://localhost:3000/Comidas/';
+
 
    getBookings():Observable<tables[]>{
-      return this.http.get<tables[]>(this.apiurl);
+      return this.http.get<tables[]>(this.apiurlReservas);
    }
   getBookingById(id:any):Observable<tables>{
-    return this.http.get<tables>(this.apiurl+'/'+id);
+    return this.http.get<tables>(this.apiurlReservas+'/'+id);
   }
   removeBookingById(id:any){
-    return this.http.delete<tables>(this.apiurl+'/'+id);
+    return this.http.delete<tables>(this.apiurlReservas+'/'+id);
   }
    agregarBooking(booking:any){
-     return this.http.post(this.apiurl,booking);
+     return this.http.post(this.apiurlReservas,booking);
    }
   updateBooking(id:any,booking:any){
-    return this.http.put(this.apiurl+'/'+id,booking);
+    return this.http.put(this.apiurlReservas+'/'+id,booking);
+  }
+  getFoods():Observable<tables[]>{
+    return this.http.get<tables[]>(this.apiurlComidas);
+  }
+  getFoodById(id:any):Observable<tables>{
+    return this.http.get<tables>(this.apiurlComidas+'/'+id);
+  }
+  agregarFood(food:any){
+    return this.http.post(this.apiurlComidas,food);
+  }
+  updateFood(id:any,food:any){
+    return this.http.put(this.apiurlComidas+'/'+id,food);
+  }
+  removeFoodById(id:any){
+    return this.http.delete<tables>(this.apiurlComidas+'/'+id);
   }
 }

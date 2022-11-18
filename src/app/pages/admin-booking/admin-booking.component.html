@@ -58,6 +58,9 @@
                   Acciones
                 </th>
                 <td mat-cell *matCellDef="let element" class="align-middle">
+                  <a class="cursor-pointer ml-2 text-blue-900" matTooltip="Ver Comida">
+                    <button (click)="lookFood(element.id)" mat-raised-button color="primary">Ver Comida</button>
+                  </a>
                   <a class="cursor-pointer ml-2 text-blue-900" matTooltip="Editar usuario">
                     <button (click)="editBooking(element.id)" mat-raised-button color="primary">Editar</button>
                   </a>

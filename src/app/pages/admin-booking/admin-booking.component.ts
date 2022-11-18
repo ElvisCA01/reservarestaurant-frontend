@@ -76,16 +76,27 @@ export class AdminBookingComponent implements OnInit {
   removeBooking(id:any){
     this.api.removeBookingById(id)
       .subscribe(r=>{
-        this._snackbar.open('Usuario eliminado'),'',{
+        this._snackbar.open('Usuario y Comida eliminados'),'',{
           duration:1500,
           horizontalPosition: 'Center',
           verticalPosition: 'bottom'
         }
         this.CargarBookings();
       })
+    this.api.removeFoodById(id)
+      .subscribe(r=>{
+      })
+    this.CargarBookings();
   }
+
+
   ngAfterViewInit() {
   }
+
+
+  lookFood(id:any){
+  }
+
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.finalData.filter = filterValue.trim().toLowerCase();

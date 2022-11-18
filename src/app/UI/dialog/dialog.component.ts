@@ -3,7 +3,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AdminBookingService} from "../../services/admin-booking.service";
 import {MAT_DIALOG_DATA, MatDialog} from "@angular/material/dialog";
 import {MatSnackBar} from "@angular/material/snack-bar";
-import {AdminBookingComponent} from "../../pages/admin-booking/admin-booking.component";
+import {Dialog2Component} from "../dialog2/dialog2.component";
 
 @Component({
   selector: 'app-dialog',
@@ -47,23 +47,19 @@ export class DialogComponent implements OnInit {
         })
     }
   }
+
   saveBooking(){
     if(this.form.valid){
       const editId=this.form.getRawValue().id;
       if(editId!='' && editId!=null){
         this.api.updateBooking(editId,this.form.getRawValue())
           .subscribe(response =>{
-            this.closeDialog();
-            this._snackbar.open('Usuario editado'),'',{
-              duration:1500,
-              horizontalPosition: 'Center',
-              verticalPosition: 'bottom'
-            }
+            this.openDialog2(editId);
           });
       }else{
         this.api.agregarBooking(this.form.value)
           .subscribe(response =>{
-            this.closeDialog();
+            this.openDialog2('');
             this._snackbar.open('Usuario agregado correctamente'),'',{
               duration:1500,
               horizontalPosition: 'Center',
@@ -73,8 +69,18 @@ export class DialogComponent implements OnInit {
       }
     }
   }
-  closeDialog(){
-    this.dialog.closeAll();
-  }
 
+
+
+
+  openDialog2(id:any) {
+    const _dialog = this.dialog.open(Dialog2Component,{
+      width:'60%',
+      data:{
+        id:id
+      }
+    })
+    _dialog.afterClosed().subscribe(r=>{
+    })
+  }
 }
