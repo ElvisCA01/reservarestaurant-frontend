@@ -1,0 +1,56 @@
+<app-header></app-header>
+<div style="margin-left: 550px; width: 450px" class="text-base shadow-md px-8 pt-6 pb-8 w-7/12 flex flex-col bg-gray-100 my-10 w-9/12 rounded-3xl text-gray-500">
+  <form [formGroup]="formReserva" (ngSubmit)="guardaReserva()">
+    <div>
+    <mat-form-field class="w-11/12">
+      <mat-label> ¿Cuantas personas vendrán?</mat-label>
+      <mat-select formControlName="personas">
+        <mat-option *ngFor="let personas of personas" [value]="personas">
+          {{personas}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    </div>
+    <div>
+    <mat-form-field class="w-11/12">
+      <mat-label>Nombre</mat-label>
+      <input matInput autocomplete="off" formControlName="nombre">
+    </mat-form-field>
+    </div>
+    <div>
+    <mat-form-field class="w-10/12">
+      <mat-label> Primer apellido</mat-label>
+      <input matInput autocomplete="off" formControlName="papellido" >
+    </mat-form-field>
+    </div>
+    <div>
+    <mat-form-field class="w-10/12">
+      <mat-label>Segundo apellido</mat-label>
+      <input matInput autocomplete="off" formControlName="sapellido" >
+    </mat-form-field>
+    </div>
+    <div>
+    <mat-form-field class="w-10/12">
+      <mat-label>Horario</mat-label>
+      <mat-select formControlName="horario">
+        <mat-option *ngFor="let horario of horario" [value]="horario" >
+          {{horario}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    </div>
+    <mat-form-field class="w-10/12">
+      <mat-label>Motivo del Evento</mat-label>
+      <textarea matInput autocomplete="off" formControlName="evento"></textarea>
+    </mat-form-field>
+    <mat-form-field class="w-10/12">
+      <mat-label>Fecha</mat-label>
+      <input matInput [min]="currentDate" [matDatepicker]="picker" formControlName="fecha" autocomplete="off">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <div class="">
+      <button [disabled]="formReserva.invalid" type="submit" mat-raised-button color="primary">Pasar a elegir comidas</button>
+    </div>
+  </form>
+</div>

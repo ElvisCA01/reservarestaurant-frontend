@@ -1,5 +1,4 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {tables} from "../../models/tables";
 import {MatTableDataSource} from "@angular/material/table";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
@@ -10,6 +9,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Title} from "@angular/platform-browser";
 import {MatDialog,MAT_DIALOG_DATA} from "@angular/material/dialog";
 import {DialogComponent} from "../../UI/dialog/dialog.component";
+import {Reserva} from "../../classes/reserva";
 
 @Component({
   selector: 'app-admin-booking',
@@ -17,8 +17,8 @@ import {DialogComponent} from "../../UI/dialog/dialog.component";
   styleUrls: ['./admin-booking.component.scss']
 })
 export class AdminBookingComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'nombre', 'personas', 'evento','fecha','horario','acciones'];
-  dataSource!: tables[];
+  displayedColumns: string[] = ['id', 'nombre','papellido','sapellido', 'personas', 'evento','fecha','horario','acciones'];
+  Reservas: Reserva[];
   @ViewChild(MatPaginator) _paginator!:MatPaginator;
   @ViewChild(MatSort) _sort!:MatSort;
   finalData:any
@@ -34,6 +34,8 @@ export class AdminBookingComponent implements OnInit {
     this.form = this.fb.group({
       id: ['',Validators.required, Validators.pattern("[0-9]")],
       nombre: ['',Validators.required],
+      papellido: ['',Validators.required],
+      sapellido: ['',Validators.required],
       evento: ['',Validators.required],
       personas: ['',Validators.required],
       fecha: ['',Validators.required],
@@ -60,17 +62,18 @@ export class AdminBookingComponent implements OnInit {
     })
   }
 
+
   CargarBookings(){
-    this.api.getBookings().subscribe(response=>{
-      this.dataSource=response;
-      this.finalData=new MatTableDataSource<tables>(this.dataSource);
+    this.api.getBookings().subscribe(dato=>{
+      this.Reservas=dato;
+      this.finalData=new MatTableDataSource<Reserva>(this.Reservas);
       this.finalData.paginator=this._paginator;
       this.finalData.sort=this._sort;
     })
   }
 
-  editBooking(id:any){
-    this.openDialog(id);
+  editBooking(id:number){
+    this.router.navigate(['/editBooking',id]);
   }
 
   removeBooking(id:any){
@@ -95,6 +98,7 @@ export class AdminBookingComponent implements OnInit {
 
 
   lookFood(id:any){
+
   }
 
   applyFilter(event: Event) {

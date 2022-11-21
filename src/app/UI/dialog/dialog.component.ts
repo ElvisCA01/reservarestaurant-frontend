@@ -72,7 +72,6 @@ export class DialogComponent implements OnInit {
 
 
 
-
   openDialog2(id:any) {
     const _dialog = this.dialog.open(Dialog2Component,{
       width:'60%',

@@ -5,55 +5,62 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { animate, state, style, transition, trigger} from '@angular/animations';
 import {Title} from "@angular/platform-browser";
+import {Reserva} from "../../classes/reserva";
+import {MatPaginator} from "@angular/material/paginator";
+import {MatSnackBar} from "@angular/material/snack-bar";
+import {MatDialog} from "@angular/material/dialog";
+import {AdminBookingService} from "../../services/admin-booking.service";
+import {Router} from "@angular/router";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
-interface Country {
-  name: string;
-  area: string;
-  evento: string;
-}
+
 
 @Component({
   selector: 'app-search-booking',
   templateUrl: './search-booking.component.html',
   styleUrls: ['./search-booking.component.scss'],
-  animations: [
-    trigger('detailExpand', [
-      state('collapsed', style({height: '0px', minHeight: '0'})),
-      state('expanded', style({height: '*'})),
-      transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
-    ]),
-  ],
 })
 export class SearchBookingComponent implements OnInit, AfterViewInit{
-  searchTerm = '';
+  displayedColumns: string[] = ['id', 'nombre','papellido','sapellido', 'personas', 'evento','fecha','horario'];
+  Reservas: Reserva[];
+  form: FormGroup;
 
-  displayedColumns: string[] = ['Name', 'Area', 'Population'];
-  public dataSource: MatTableDataSource<any> = new MatTableDataSource<Country>()
-  @ViewChild(MatSort) sort!: MatSort;
-
+  @ViewChild(MatPaginator) _paginator!:MatPaginator;
+  @ViewChild(MatSort) _sort!:MatSort;
+  finalData:any
 
 
   ngAfterViewInit(): void {
-    this.dataSource.sort = this.sort;
   }
 
-  filterCountries(searchTerm: string) {
-    this.dataSource.filter = searchTerm.trim().toLocaleLowerCase();
-    const filterValue = searchTerm;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+
+  CargarBookings(){
+    this.api.getBookings().subscribe(dato=>{
+      this.Reservas=dato;
+      this.finalData=new MatTableDataSource<Reserva>(this.Reservas);
+      this.finalData.paginator=this._paginator;
+      this.finalData.sort=this._sort;
+    })
   }
-  constructor(private http: HttpClient, private titulo:Title) {
+
+
+  constructor(private http:HttpClient,private _snackbar:MatSnackBar,private dialog: MatDialog,private titulo:Title,private _tablesService:AdminBookingService, private _snackBar: MatSnackBar, private router:Router, private fb:FormBuilder,private api:AdminBookingService) {
     titulo.setTitle('Busca tu reserva!')
+    this.form = this.fb.group({
+      id: ['',Validators.required, Validators.pattern("[0-9]")],
+      nombre: ['',Validators.required],
+      papellido: ['',Validators.required],
+      sapellido: ['',Validators.required],
+      evento: ['',Validators.required],
+      personas: ['',Validators.required],
+      fecha: ['',Validators.required],
+      horario: ['',Validators.required],
+    })
   }
 
   ngOnInit(): void {
-    this.http.get<Country[]>('./assets/data/tables.json')
-      .subscribe((data: any) => {
-        this.dataSource = new MatTableDataSource<Country>(data)
-      });
+    this.CargarBookings();
   }
-  onMatSortChange() {
-    this.dataSource.sort = this.sort;
-  }
+
 
 }

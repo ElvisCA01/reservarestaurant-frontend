@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {tables} from "../models/tables";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
+import {Reserva} from "../classes/reserva";
 
 @Injectable({
   providedIn: 'root'
@@ -9,13 +10,40 @@ import {Observable} from "rxjs";
 export class AdminBookingService {
 
   constructor(private http:HttpClient) { }
-    apiurlReservas = 'http://localhost:3000/BookingList/';
+    private apiurlReservas = 'http://localhost:8080/api/reservas';
     apiurlComidas  = 'http://localhost:3000/Comidas/';
 
 
-   getBookings():Observable<tables[]>{
-      return this.http.get<tables[]>(this.apiurlReservas);
+
+    //Consigue las reservas
+   getBookings():Observable<Reserva[]>{
+      return this.http.get<Reserva[]>(this.apiurlReservas);
    }
+
+   //Registra las reservas
+   registrarReserva(reserva:Reserva): Observable<any>{
+     return this.http.post(this.apiurlReservas,reserva);
+   }
+
+   //Actualiza la reserva
+  actualizarReserva(id:number,reserva:Reserva):Observable<any>{
+    return this.http.put(`${this.apiurlReservas}/${id}`,reserva)
+  }
+  //Sirve para obtener o buscar una reserva
+  obtenerReservaPorId(id:number):Observable<any>{
+     return this.http.get<Reserva>(`${this.apiurlReservas}/${id}`);
+  }
+  //Elimina la reserva
+  eliminarReserva(id:number):Observable<any>{
+     return this.http.delete(`${this.apiurlReservas}/${id}`);
+  }
+
+
+
+
+
+
+
   getBookingById(id:any):Observable<tables>{
     return this.http.get<tables>(this.apiurlReservas+'/'+id);
   }

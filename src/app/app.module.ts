@@ -58,6 +58,8 @@ import { BookingPeopleFoodSoupsComponent } from './pages/booking-people-food-sou
 import { BookingPeopleFoodSeafoodComponent } from './pages/booking-people-food-seafood/booking-people-food-seafood.component';
 import { DialogComponent } from './UI/dialog/dialog.component';
 import { Dialog2Component } from './UI/dialog2/dialog2.component';
+import { ReservaComponent } from './pages/reserva/reserva.component';
+import { ComidasComponent } from './pages/comidas/comidas.component';
 
 
 
@@ -92,6 +94,8 @@ import { Dialog2Component } from './UI/dialog2/dialog2.component';
     BookingPeopleFoodSeafoodComponent,
     DialogComponent,
     Dialog2Component,
+    ReservaComponent,
+    ComidasComponent,
   ],
   imports: [
     BrowserModule,
