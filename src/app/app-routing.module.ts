@@ -25,10 +25,10 @@ const routes: Routes = [
   { path: 'Us', component: UsComponent},
   { path: 'Location', component: LocationComponent},
   { path: 'adminBooking', component: AdminBookingComponent},
-  { path: 'watchBooking', component: WatchBookingComponent},
   { path: 'reserva', component: ReservaComponent},
   { path: 'comidas', component: ComidasComponent},
   { path: 'editBooking/:id', component: EditBookingComponent},
+  { path: 'watchBooking/:id', component: WatchBookingComponent},
 
 ];
 

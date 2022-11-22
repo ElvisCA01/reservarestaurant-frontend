@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
-import { SearchFilterPipe } from './pages/search-booking/filter-search.pipe';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
@@ -44,8 +43,6 @@ import {LoginComponent} from "./pages/login/login.component";
 import { AdminBookingComponent } from './pages/admin-booking/admin-booking.component';
 import { EditBookingComponent } from './pages/edit-booking/edit-booking.component';
 import { WatchBookingComponent } from './pages/watch-booking/watch-booking.component';
-import { DialogComponent } from './UI/dialog/dialog.component';
-import { Dialog2Component } from './UI/dialog2/dialog2.component';
 import { ReservaComponent } from './pages/reserva/reserva.component';
 import { ComidasComponent } from './pages/comidas/comidas.component';
 
@@ -59,7 +56,6 @@ import { ComidasComponent } from './pages/comidas/comidas.component';
     PrincipalComponent,
     BookingPeopleFinishedComponent,
     SearchBookingComponent,
-    SearchFilterPipe,
     SearchBookingQueryComponent,
     BookingPeoplePaymentComponent,
     UsComponent,
@@ -68,8 +64,6 @@ import { ComidasComponent } from './pages/comidas/comidas.component';
     AdminBookingComponent,
     EditBookingComponent,
     WatchBookingComponent,
-    DialogComponent,
-    Dialog2Component,
     ReservaComponent,
     ComidasComponent,
   ],

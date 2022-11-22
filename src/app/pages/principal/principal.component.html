@@ -1,13 +1,35 @@
 
-<div class="bg-green-400 h-full min-h-full">
   <app-header></app-header>
-  <router-outlet></router-outlet>
   <div class="py-8 px-4 md:px-6 2xl:px-0 2xl:container 2xl:mx-auto flex justify-center items-center">
+
+  <script>
+    let menu = document.getElementById("menu");
+    let closeIcon = document.getElementById("closeIcon");
+    let openIcon = document.getElementById("openIcon");
+  const showMenu = (flag) => {
+    if (flag) {
+      menu.classList.toggle("hidden");
+      closeIcon.classList.toggle("hidden");
+      openIcon.classList.toggle("hidden");
+    }
+  };
+
+
+  let menu2 = document.getElementById("menu2");
+  let closeIcon2 = document.getElementById("closeIcon2");
+  let openIcon2 = document.getElementById("openIcon2");
+  const showMenu2 = (flag) => {
+    if (flag) {
+      menu2.classList.toggle("hidden");
+      closeIcon2.classList.toggle("hidden");
+      openIcon2.classList.toggle("hidden");
+    }
+  };
+  </script>
     <div class="flex flex-col justify-start items-start w-full space-y-8">
       <div class="flex justify-start items-start">
         <p class="text-3xl lg:text-4xl font-semibold leading-7 lg:leading-9 text-gray-800 dark:text-white ">COMENTARIOS</p>
       </div>
-
       <div class="w-full flex justify-start items-start flex-col bg-gray-50 dark: bg-yellow-200 p-8">
         <div class="flex flex-col md:flex-row justify-between w-full">
           <div class="flex flex-row justify-between items-start">
@@ -125,89 +147,7 @@
           </div>
 
         </div>
-
-
       </div>
     </div>
-  </div>
-  <style>.carousel-cell {
-    width: 150px;
-    height: 150px;
-
-    margin-right: 24px;
-    counter-increment: carousel-cell;
-  }
-
-  .carousel-cell:before {
-    display: block;
-    width: 20%;
-  }
-
-  .flickity-slider {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: -260px !important;
-  }
-
-  .flickity-button {
-    position: absolute !important;
-    inset: 0 !important;
-    top: 50% !important;
-    left: 80% !important;
-    background: white;
-    border: 0px;
-    color: #27272a;
-  }
-
-  .flickity-prev-next-button:hover {
-    background-color: #27272a;
-    color: white;
-  }
-
-  .flickity-prev-next-button.previous {
-    visibility: hidden;
-  }
-
-  .flickity-prev-next-button.next {
-    margin-left: 50px;
-    width: 48px;
-    height: 48px;
-    visibility: hidden;
-  }
-
-  .flickity-enabled.is-draggable .flickity-viewport {
-    cursor: none;
-    cursor: default;
-  }
-
-  .flickity-prev-next-button .flickity-button-icon {
-    margin-left: 2px;
-    margin-top: 2px;
-    width: 24px;
-    height: 24px;
-  }
-  </style>
-  <script>let menu = document.getElementById("menu");
-  let closeIcon = document.getElementById("closeIcon");
-  let openIcon = document.getElementById("openIcon");
-  const showMenu = (flag) => {
-    if (flag) {
-      menu.classList.toggle("hidden");
-      closeIcon.classList.toggle("hidden");
-      openIcon.classList.toggle("hidden");
-    }
-  };
-
-  let menu2 = document.getElementById("menu2");
-  let closeIcon2 = document.getElementById("closeIcon2");
-  let openIcon2 = document.getElementById("openIcon2");
-  const showMenu2 = (flag) => {
-    if (flag) {
-      menu2.classList.toggle("hidden");
-      closeIcon2.classList.toggle("hidden");
-      openIcon2.classList.toggle("hidden");
-    }
-  };
-  </script>
+  <router-outlet></router-outlet>
 </div>

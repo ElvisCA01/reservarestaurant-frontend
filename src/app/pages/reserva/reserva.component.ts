@@ -2,7 +2,7 @@ import {Component, Inject, OnInit} from '@angular/core';
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Reserva} from "../../classes/reserva";
-import {AdminBookingService} from "../../services/admin-booking.service";
+import {AdminBookingService} from "../../services/admin/admin-booking.service";
 import {Router} from "@angular/router";
 import {error} from "@angular/compiler-cli/src/transformers/util";
 

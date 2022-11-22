@@ -73,7 +73,10 @@
                 </th>
                 <td mat-cell *matCellDef="let Reserva" class="align-middle">
                   <a class="cursor-pointer ml-2 text-blue-900" matTooltip="Ver Comida">
-                    <button (click)="lookFood(Reserva.id)" mat-raised-button color="primary">Ver Comida</button>
+                    <button mat-raised-button color="primary">Ver Comida</button>
+                  </a>
+                  <a class="cursor-pointer ml-2 text-blue-900" matTooltip="Ver Comida">
+                    <button (click)="verReserva(Reserva.id)" mat-raised-button color="primary">Ver Detalles</button>
                   </a>
                   <a class="cursor-pointer ml-2 text-blue-900" matTooltip="Editar usuario">
                     <button (click)="editBooking(Reserva.id)" mat-raised-button color="primary">Editar</button>

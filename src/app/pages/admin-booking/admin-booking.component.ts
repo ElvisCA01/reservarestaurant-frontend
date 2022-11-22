@@ -2,13 +2,12 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatTableDataSource} from "@angular/material/table";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
-import {AdminBookingService} from "../../services/admin-booking.service";
+import {AdminBookingService} from "../../services/admin/admin-booking.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {Router} from "@angular/router";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Title} from "@angular/platform-browser";
 import {MatDialog,MAT_DIALOG_DATA} from "@angular/material/dialog";
-import {DialogComponent} from "../../UI/dialog/dialog.component";
 import {Reserva} from "../../classes/reserva";
 
 @Component({
@@ -29,7 +28,7 @@ export class AdminBookingComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
 
 
-  constructor(private _snackbar:MatSnackBar,private dialog: MatDialog,private titulo:Title,private _tablesService:AdminBookingService, private _snackBar: MatSnackBar, private router:Router, private fb:FormBuilder,private api:AdminBookingService) {
+  constructor(private _snackbar:MatSnackBar,private titulo:Title,private _tablesService:AdminBookingService, private _snackBar: MatSnackBar, private router:Router, private fb:FormBuilder,private api:AdminBookingService) {
     this.titulo.setTitle('CRUD Administación')
     this.form = this.fb.group({
       id: ['',Validators.required, Validators.pattern("[0-9]")],
@@ -66,32 +65,20 @@ export class AdminBookingComponent implements OnInit {
   }
 
 
+  verReserva(id:number){
+      this.router.navigate(['watchBooking',id]);
+  }
 
   ngOnInit(): void {
     this.CargarReservas();
   }
 
 
-  openDialog(id:any) {
-   const _dialog = this.dialog.open(DialogComponent,{
-     width:'60%',
-     data:{
-       id:id
-     }
-   })
-    _dialog.afterClosed().subscribe(r=>{
-      this.CargarReservas();
-    })
-  }
-
 
   ngAfterViewInit() {
   }
 
 
-  lookFood(id:any){
-
-  }
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
