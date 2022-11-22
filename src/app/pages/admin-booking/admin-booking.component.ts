@@ -44,9 +44,31 @@ export class AdminBookingComponent implements OnInit {
   }
 
 
+  editBooking(id:number){
+    this.router.navigate(['/editBooking',id]);
+  }
+
+  eliminarReserva(id:number){
+    this.api.eliminarReserva(id)
+      .subscribe(dato=>{
+        console.log(dato);
+        this.CargarReservas();
+      })
+  }
+
+  CargarReservas(){
+    this.api.getBookings().subscribe(dato=>{
+      this.Reservas=dato;
+      this.finalData=new MatTableDataSource<Reserva>(this.Reservas);
+      this.finalData.paginator=this._paginator;
+      this.finalData.sort=this._sort;
+    })
+  }
+
+
 
   ngOnInit(): void {
-    this.CargarBookings();
+    this.CargarReservas();
   }
 
 
@@ -58,38 +80,8 @@ export class AdminBookingComponent implements OnInit {
      }
    })
     _dialog.afterClosed().subscribe(r=>{
-      this.CargarBookings();
+      this.CargarReservas();
     })
-  }
-
-
-  CargarBookings(){
-    this.api.getBookings().subscribe(dato=>{
-      this.Reservas=dato;
-      this.finalData=new MatTableDataSource<Reserva>(this.Reservas);
-      this.finalData.paginator=this._paginator;
-      this.finalData.sort=this._sort;
-    })
-  }
-
-  editBooking(id:number){
-    this.router.navigate(['/editBooking',id]);
-  }
-
-  removeBooking(id:any){
-    this.api.removeBookingById(id)
-      .subscribe(r=>{
-        this._snackbar.open('Usuario y Comida eliminados'),'',{
-          duration:1500,
-          horizontalPosition: 'Center',
-          verticalPosition: 'bottom'
-        }
-        this.CargarBookings();
-      })
-    this.api.removeFoodById(id)
-      .subscribe(r=>{
-      })
-    this.CargarBookings();
   }
 
 

@@ -4,7 +4,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { BookingPeopleDataComponent } from './pages/booking-people-data/booking-people-data.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchFilterPipe } from './pages/search-booking/filter-search.pipe';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
@@ -34,28 +33,17 @@ import {MatDialogModule} from '@angular/material/dialog';
 //componentes
 import {PrincipalComponent} from './pages/principal/principal.component';
 import { SearchBookingComponent } from './pages/search-booking/search-booking.component';
-import { BookingPeopleComponent } from './pages/booking-people/booking-people.component';
 import { HeaderComponent } from './shell/header/header.component';
 import { FooterComponent } from './shell/footer/footer.component';
-import {BookingPeopleEventComponent} from './pages/booking-people-event/booking-people-event.component';
 import { BookingPeopleFinishedComponent } from './pages/booking-people-finished/booking-people-finished.component';
-import { BookingPeopleDateComponent } from './pages/booking-people-date/booking-people-date.component';
 import { SearchBookingQueryComponent } from './pages/search-booking-query/search-booking-query.component';
 import { BookingPeoplePaymentComponent } from './pages/booking-people-payment/booking-people-payment.component';
 import { UsComponent } from './pages/us/us.component';
 import { LocationComponent } from './pages/location/location.component';
 import {LoginComponent} from "./pages/login/login.component";
-import { BookingDateHourComponent } from './pages/booking-date-hour/booking-date-hour.component';
 import { AdminBookingComponent } from './pages/admin-booking/admin-booking.component';
 import { EditBookingComponent } from './pages/edit-booking/edit-booking.component';
 import { WatchBookingComponent } from './pages/watch-booking/watch-booking.component';
-import { BookingPeopleFoodSnacksComponent } from './pages/booking-people-food-snacks/booking-people-food-snacks.component';
-import { BookingPeopleFoodJuicesComponent } from './pages/booking-people-food-juices/booking-people-food-juices.component';
-import { BookingPeopleFoodDishesComponent } from './pages/booking-people-food-dishes/booking-people-food-dishes.component';
-import { BookingPeopleFoodDessertsComponent } from './pages/booking-people-food-desserts/booking-people-food-desserts.component';
-import { BookingPeopleFoodSodasComponent } from './pages/booking-people-food-sodas/booking-people-food-sodas.component';
-import { BookingPeopleFoodSoupsComponent } from './pages/booking-people-food-soups/booking-people-food-soups.component';
-import { BookingPeopleFoodSeafoodComponent } from './pages/booking-people-food-seafood/booking-people-food-seafood.component';
 import { DialogComponent } from './UI/dialog/dialog.component';
 import { Dialog2Component } from './UI/dialog2/dialog2.component';
 import { ReservaComponent } from './pages/reserva/reserva.component';
@@ -68,12 +56,8 @@ import { ComidasComponent } from './pages/comidas/comidas.component';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    BookingPeopleComponent,
     PrincipalComponent,
-    BookingPeopleEventComponent,
-    BookingPeopleDataComponent,
     BookingPeopleFinishedComponent,
-    BookingPeopleDateComponent,
     SearchBookingComponent,
     SearchFilterPipe,
     SearchBookingQueryComponent,
@@ -81,17 +65,9 @@ import { ComidasComponent } from './pages/comidas/comidas.component';
     UsComponent,
     LocationComponent,
     LoginComponent,
-    BookingDateHourComponent,
     AdminBookingComponent,
     EditBookingComponent,
     WatchBookingComponent,
-    BookingPeopleFoodSnacksComponent,
-    BookingPeopleFoodJuicesComponent,
-    BookingPeopleFoodDishesComponent,
-    BookingPeopleFoodDessertsComponent,
-    BookingPeopleFoodSodasComponent,
-    BookingPeopleFoodSoupsComponent,
-    BookingPeopleFoodSeafoodComponent,
     DialogComponent,
     Dialog2Component,
     ReservaComponent,

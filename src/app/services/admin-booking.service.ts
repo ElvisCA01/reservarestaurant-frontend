@@ -24,15 +24,15 @@ export class AdminBookingService {
    registrarReserva(reserva:Reserva): Observable<any>{
      return this.http.post(this.apiurlReservas,reserva);
    }
-
+  //Sirve para obtener o buscar una reserva
+  obtenerReservaPorId(id:number):Observable<any>{
+    return this.http.get<Reserva>(`${this.apiurlReservas}/${id}`);
+  }
    //Actualiza la reserva
   actualizarReserva(id:number,reserva:Reserva):Observable<any>{
     return this.http.put(`${this.apiurlReservas}/${id}`,reserva)
   }
-  //Sirve para obtener o buscar una reserva
-  obtenerReservaPorId(id:number):Observable<any>{
-     return this.http.get<Reserva>(`${this.apiurlReservas}/${id}`);
-  }
+
   //Elimina la reserva
   eliminarReserva(id:number):Observable<any>{
      return this.http.delete(`${this.apiurlReservas}/${id}`);

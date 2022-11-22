@@ -17,27 +17,28 @@
         </mat-form-field>
       </td>
     </div>
-  <table class="example-full-width">
+  <div>
     <td>
-      <mat-form-field class="example-full-width" appearance="fill">
+      <mat-form-field class="" appearance="fill">
         <mat-label>Codigo de verificación</mat-label>
         <input matInput #securitycode maxlength="4" placeholder="Ejm 9410" formControlName="codigoVerificacion">
         <mat-hint align="end">{{securitycode.value.length}} / 4</mat-hint>
       </mat-form-field>
     </td>
-
+  <td>
     <mat-form-field class="mx-5" appearance="fill">
       <mat-label>Mes y año</mat-label>
-      <input matInput [matDatepicker]="dp" [formControl]="date" min="{{currentDate | date:'yyyy-MM'}}">
-      <mat-hint>MM/AAAA</mat-hint>
-      <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+      <input matInput [min]="currentDate" [matDatepicker]="dp" formControlName="fechaCaducidad">
+      <mat-hint>MM/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="dp"></mat-datepicker-toggle>
       <mat-datepicker #dp
                       startView="multi-year"
                       (monthSelected)="setMonthAndYear($event, dp)"
                       panelClass="example-month-picker">
       </mat-datepicker>
     </mat-form-field>
-  </table>
+  </td>
+  </div>
     <div class="text-right text-2xl">
       <button [disabled]="form.invalid" routerLink="/bookingPeopleFinished" mat-button color="primary" class="bg-gray-400 rounded-2xl p-1">Continuar</button>
     </div>
