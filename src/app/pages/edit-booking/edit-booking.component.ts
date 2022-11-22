@@ -11,7 +11,7 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 })
 export class EditBookingComponent implements OnInit {
   personas: any[] = ['01','02','03','04','05','06'];
-  horario: any[] = ['11:30 pm a 1:00pm','1:30 pm a 3:00 pm','3:30 pm a 5:30 pm'];
+  horario: any[] = ['11:30 pm a 1:00 pm','1:30 pm a 3:00 pm','3:30 pm a 5:30 pm'];
 
   currentDate: any = new Date();
   formReserva: FormGroup;
@@ -35,7 +35,19 @@ export class EditBookingComponent implements OnInit {
     this.id = this.route.snapshot.params['id'];
     this.api.obtenerReservaPorId(this.id)
       .subscribe(data =>{
-        this.formReserva = data;
+        this.formReserva.patchValue(data);
       })
   }
+
+  onSubmit(){
+    this.api.actualizarReserva(this.id,this.formReserva.value)
+      .subscribe(data=>{
+        this.goToAdminBooking();
+      })
+  }
+
+  goToAdminBooking(){
+    this.router.navigate(['/adminBooking']);
+  }
+
 }

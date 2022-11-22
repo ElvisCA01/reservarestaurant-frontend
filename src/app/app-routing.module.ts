@@ -28,7 +28,7 @@ const routes: Routes = [
   { path: 'watchBooking', component: WatchBookingComponent},
   { path: 'reserva', component: ReservaComponent},
   { path: 'comidas', component: ComidasComponent},
-  { path: 'editBooking', component: EditBookingComponent},
+  { path: 'editBooking/:id', component: EditBookingComponent},
 
 ];
 
