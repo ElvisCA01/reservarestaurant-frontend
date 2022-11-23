@@ -1,12 +1,9 @@
 <app-header></app-header>
-<!-- component -->
-  <div class="h-screen flex ">
-    <div class="hidden lg:flex w-full  lg:w-1/2 login_img_section
-          justify-around items-center bg-no-repeat">
+  <div class="flex ">
+    <div class="hidden overflow-auto lg:flex w-full h-full lg:w-1/2 login_img_section justify-around items-center">
       <div class="bg-black opacity-20 inset-0 z-0"></div>
-
     </div>
-    <div class="flex w-full lg:w-1/2 justify-center items-center bg-green-400 space-y-8">
+    <div class="flex w-full lg:w-1/2 justify-center items-center space-y-8">
       <div class="w-full px-8 md:px-32 lg:px-24">
 
         <mat-spinner *ngIf="loading" diameter="50" class="m-auto my-2"></mat-spinner>
@@ -26,9 +23,11 @@
             </svg>
             <input autocomplete="off" formControlName="password" class="pl-2 w-full outline-none border-none" type="password" name="password" placeholder="Contraseña" />
           </div>
+
           <button [disabled]="form.invalid" class="block w-full mt-5 py-2 rounded-2xl hover:bg-green-700 hover:-translate-y-1 transition-all duration-500 text-white font-semibold mb-2" mat-raised-button color="primary">Iniciar sesión</button>
           <div class="flex justify-between mt-4">
           </div>
+          <p class="mt-6 text-sm text-center text-gray-400">¿No tienes una cuenta todavia? <a routerLink="/register" class="text-blue-500 focus:outline-none focus:underline hover:underline">Registrate!</a>.</p>
         </form>
       </div>
     </div>

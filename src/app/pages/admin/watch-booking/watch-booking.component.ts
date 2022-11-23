@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {AdminBookingService} from "../../services/admin/admin-booking.service";
+import {AdminBookingService} from "../../../services/admin/admin-booking.service";
 import {ActivatedRoute, Router} from "@angular/router";
-import {Reserva} from "../../classes/reserva";
+import {Reserva} from "../../../classes/reserva/reserva";
 import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
@@ -31,6 +31,31 @@ export class WatchBookingComponent implements OnInit {
     })
 
   }
+  get idP(){
+    return this.formReserva.get('id')?.value;
+  }
+  get nombreP(){
+    return this.formReserva.get('nombre')?.value;
+  }
+  get personaP(){
+    return this.formReserva.get('personas')?.value;
+  }
+  get papellidoP(){
+    return this.formReserva.get('papellido')?.value;
+  }
+  get sapellidoP(){
+    return this.formReserva.get('sapellido')?.value;
+  }
+  get horarioP(){
+    return this.formReserva.get('horario')?.value;
+  }
+  get eventoP(){
+    return this.formReserva.get('evento')?.value;
+  }
+  get fechaP(){
+    return this.formReserva.get('fecha')?.value;
+  }
+
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];

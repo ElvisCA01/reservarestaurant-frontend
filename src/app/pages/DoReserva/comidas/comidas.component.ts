@@ -1,7 +1,7 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {FormBuilder, Validators} from "@angular/forms";
 import {MatSnackBar} from "@angular/material/snack-bar";
-import {AdminBookingService} from "../../services/admin/admin-booking.service";
+import {AdminBookingService} from "../../../services/admin/admin-booking.service";
 import {MAT_DIALOG_DATA, MatDialog} from "@angular/material/dialog";
 
 @Component({

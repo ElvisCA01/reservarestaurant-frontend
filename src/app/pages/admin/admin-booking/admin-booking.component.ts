@@ -2,13 +2,13 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatTableDataSource} from "@angular/material/table";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
-import {AdminBookingService} from "../../services/admin/admin-booking.service";
+import {AdminBookingService} from "../../../services/admin/admin-booking.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {Router} from "@angular/router";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Title} from "@angular/platform-browser";
 import {MatDialog,MAT_DIALOG_DATA} from "@angular/material/dialog";
-import {Reserva} from "../../classes/reserva";
+import {Reserva} from "../../../classes/reserva/reserva";
 
 @Component({
   selector: 'app-admin-booking',

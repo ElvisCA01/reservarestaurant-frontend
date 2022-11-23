@@ -5,11 +5,11 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { animate, state, style, transition, trigger} from '@angular/animations';
 import {Title} from "@angular/platform-browser";
-import {Reserva} from "../../classes/reserva";
+import {Reserva} from "../../../classes/reserva/reserva";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {MatDialog} from "@angular/material/dialog";
-import {AdminBookingService} from "../../services/admin/admin-booking.service";
+import {AdminBookingService} from "../../../services/admin/admin-booking.service";
 import {Router} from "@angular/router";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 

@@ -30,21 +30,22 @@ import {MatDialogModule} from '@angular/material/dialog';
 
 
 //componentes
-import {PrincipalComponent} from './pages/principal/principal.component';
-import { SearchBookingComponent } from './pages/search-booking/search-booking.component';
+import {PrincipalComponent} from './pages/home/principal/principal.component';
+import { SearchBookingComponent } from './pages/home/search-booking/search-booking.component';
 import { HeaderComponent } from './shell/header/header.component';
 import { FooterComponent } from './shell/footer/footer.component';
-import { BookingPeopleFinishedComponent } from './pages/booking-people-finished/booking-people-finished.component';
-import { SearchBookingQueryComponent } from './pages/search-booking-query/search-booking-query.component';
-import { BookingPeoplePaymentComponent } from './pages/booking-people-payment/booking-people-payment.component';
-import { UsComponent } from './pages/us/us.component';
-import { LocationComponent } from './pages/location/location.component';
-import {LoginComponent} from "./pages/login/login.component";
-import { AdminBookingComponent } from './pages/admin-booking/admin-booking.component';
-import { EditBookingComponent } from './pages/edit-booking/edit-booking.component';
-import { WatchBookingComponent } from './pages/watch-booking/watch-booking.component';
-import { ReservaComponent } from './pages/reserva/reserva.component';
-import { ComidasComponent } from './pages/comidas/comidas.component';
+import { BookingPeopleFinishedComponent } from './pages/DoReserva/booking-people-finished/booking-people-finished.component';
+import { SearchBookingQueryComponent } from './pages/home/search-booking-query/search-booking-query.component';
+import { BookingPeoplePaymentComponent } from './pages/DoReserva/booking-people-payment/booking-people-payment.component';
+import { UsComponent } from './pages/home/us/us.component';
+import { LocationComponent } from './pages/home/location/location.component';
+import {LoginComponent} from "./pages/userLoginRegister/login/login.component";
+import { AdminBookingComponent } from './pages/admin/admin-booking/admin-booking.component';
+import { EditBookingComponent } from './pages/admin/edit-booking/edit-booking.component';
+import { WatchBookingComponent } from './pages/admin/watch-booking/watch-booking.component';
+import { ReservaComponent } from './pages/DoReserva/reserva/reserva.component';
+import { ComidasComponent } from './pages/DoReserva/comidas/comidas.component';
+import { RegisterComponent } from './pages/userLoginRegister/register/register.component';
 
 
 
@@ -66,6 +67,7 @@ import { ComidasComponent } from './pages/comidas/comidas.component';
     WatchBookingComponent,
     ReservaComponent,
     ComidasComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

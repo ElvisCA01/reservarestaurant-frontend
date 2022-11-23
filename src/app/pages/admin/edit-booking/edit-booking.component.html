@@ -1,7 +1,7 @@
 <app-header></app-header>
-<mat-card class="shadow-md px-8 pt-6 my-5 pb-8 h-4/6 w-9/12 flex flex-col mx-auto bg-gray-100 p-4 mx-auto w-auto rounded-3xl text-gray-500">
+<mat-card class="shadow-md px-8 pt-6 my-5 pb-8 h-5/6 w-9/12 flex flex-col mx-auto bg-gray-100 p-4 mx-auto w-auto rounded-3xl text-gray-500">
   <form [formGroup]="formReserva" (ngSubmit)="onSubmit()">
-    <mat-grid-list cols="4" rowHeight="70px">
+    <mat-grid-list cols="5" rowHeight="70px">
       <!--Personas-->
       <mat-grid-tile [colspan]="1" [rowspan]="1" >
         <mat-form-field class="w-11/12 mr-2">
@@ -9,12 +9,13 @@
           <mat-select formControlName="personas">
             <mat-option *ngFor="let personas of personas" [value]="personas">
               {{personas}}
+              <p></p>
             </mat-option>
           </mat-select>
         </mat-form-field>
       </mat-grid-tile>
-      <mat-grid-tile [colspan]="3" [rowspan]="6" >
-        <img src="./assets/img/watch.PNG">
+      <mat-grid-tile [colspan]="4" [rowspan]="8" >
+        <img src="../../../../assets/img/watch.PNG">
       </mat-grid-tile>
       <!--Nombre-->
       <mat-grid-tile [colspan]="1" [rowspan]="1" >
@@ -33,11 +34,11 @@
       <!--Segundo Apellido-->
       <mat-grid-tile [colspan]="1" [rowspan]="1">
         <mat-form-field class="w-11/12 mr-2">
-          <mat-label>Segundo apellido</mat-label>
+          <mat-label> Segundo apellido</mat-label>
           <input matInput autocomplete="off" formControlName="sapellido" >
         </mat-form-field>
       </mat-grid-tile>
-      <!--Personas-->
+      <!--Horario-->
       <mat-grid-tile [colspan]="1" [rowspan]="1">
         <mat-form-field class="w-11/12 mr-2">
           <mat-label>Horario</mat-label>
@@ -48,7 +49,14 @@
           </mat-select>
         </mat-form-field>
       </mat-grid-tile>
-      <!--Horario-->
+      <!--Evento-->
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <mat-form-field class="w-11/12 mr-2">
+          <mat-label>Motivo del Evento</mat-label>
+          <textarea matInput autocomplete="off" formControlName="evento"></textarea>
+        </mat-form-field>
+      </mat-grid-tile>
+      <!--Fecha-->
       <mat-grid-tile [colspan]="1" [rowspan]="1">
         <mat-form-field class="w-11/12 mr-2">
           <mat-label>Fecha</mat-label>

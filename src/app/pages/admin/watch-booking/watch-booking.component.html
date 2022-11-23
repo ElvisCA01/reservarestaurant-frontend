@@ -1,0 +1,56 @@
+<app-header></app-header>
+<mat-card style="height: 600px" class="shadow-md px-8 pt-6 my-5 pb-8 w-9/12 mx-auto bg-gray-100 p-4 mx-auto rounded-3xl text-gray-500">
+    <mat-grid-list cols="5" rowHeight="70px">
+      <!--idT-->
+      <mat-grid-tile [colspan]="1" [rowspan]="1" >
+        <h2>IP:</h2>
+        <h2>{{idP}}</h2>
+      </mat-grid-tile>
+      <!--imagen-->
+      <mat-grid-tile [colspan]="4" [rowspan]="8" >
+        <img src="../../../../assets/img/usuario.png">
+      </mat-grid-tile>
+      <!--Personas-->
+      <mat-grid-tile [colspan]="1" [rowspan]="1" >
+        <h2>Personas: </h2>
+        <h2>{{personaP}}</h2>
+      </mat-grid-tile>
+      <!--Nombre-->
+      <mat-grid-tile [colspan]="1" [rowspan]="1" >
+        <h2>Nombre:</h2>
+        <h2>{{nombreP}}</h2>
+      </mat-grid-tile>
+      <!--Primer apellido-->
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <h2>Primer apellido:</h2>
+        <h2>{{papellidoP}}</h2>
+      </mat-grid-tile>
+      <!--Segundo Apellido-->
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <h2>Segundo Apellido: </h2>
+        <h2>{{sapellidoP}}</h2>
+      </mat-grid-tile>
+      <!--Horario-->
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <h2>Horario:</h2>
+        <h2>{{horarioP}}</h2>
+      </mat-grid-tile>
+      <!--Evento-->
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <h2>Evento:</h2>
+        <h2>{{eventoP}}</h2>
+      </mat-grid-tile>
+      <!--Fecha-->
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <h2>Fecha:</h2>
+          <h2>{{fechaP | date}}</h2>
+        </mat-grid-tile>
+      <mat-grid-tile [colspan]="1" [rowspan]="1">
+        <button routerLink="/adminBooking" mat-raised-button>Volver</button>
+      </mat-grid-tile>
+    </mat-grid-list>
+
+
+
+</mat-card >
+

@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, resolveForwardRef} from '@angular/core';
 import {Title} from "@angular/platform-browser";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {timeout} from "rxjs";
 import {Router} from "@angular/router";
+import {LoginServiceService} from "../../../services/login/login-service.service";
 
 @Component({
   selector: 'app-login',
@@ -13,8 +14,10 @@ import {Router} from "@angular/router";
 export class LoginComponent implements OnInit {
   form: FormGroup;
   loading = false;
+  model: any = {}
+  getData : boolean;
 
-  constructor(private fb:FormBuilder, private titulo:Title, private _snackBar: MatSnackBar, private router: Router) {
+  constructor(private fb:FormBuilder, private titulo:Title, private _snackBar: MatSnackBar, private router: Router, private apiUsuario:LoginServiceService) {
     titulo.setTitle("Login")
     this.form = this.fb.group({
       usuario:['',Validators.required],
@@ -31,13 +34,15 @@ export class LoginComponent implements OnInit {
     const usuario = this.form.value.usuario;
     const password = this.form.value.password;
 
-    if (usuario == 'admin' && password == 'admin123' || usuario == 'usuario' && password == '123' || this.form.valid) {
+    if (usuario == 'admin' && password == 'admin123' || usuario == 'usuario' && password == '123') {
       this.fakeLoading();
     } else {
       this.error();
       this.form.reset();
     }
   }
+
+
 
 
   error(){
@@ -53,7 +58,7 @@ export class LoginComponent implements OnInit {
     setTimeout(()=>{
 
       //redireccionamos a la pagina principal
-      this.router.navigate(['Principal']);
+      this.router.navigate(['/Principal']);
       this.loading=false;
     }, 1000)
   }
