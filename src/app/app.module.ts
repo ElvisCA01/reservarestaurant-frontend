@@ -46,6 +46,9 @@ import { WatchBookingComponent } from './pages/admin/watch-booking/watch-booking
 import { ReservaComponent } from './pages/DoReserva/reserva/reserva.component';
 import { ComidasComponent } from './pages/DoReserva/comidas/comidas.component';
 import { RegisterComponent } from './pages/userLoginRegister/register/register.component';
+import {authInterceptorProviders} from "./services/auth.interceptor";
+import { DashboardComponent } from './pages/admin/dashboard.component';
+import { UserDashboardComponent } from './pages/user/user-dashboard.component';
 
 
 
@@ -68,6 +71,8 @@ import { RegisterComponent } from './pages/userLoginRegister/register/register.c
     ReservaComponent,
     ComidasComponent,
     RegisterComponent,
+    DashboardComponent,
+    UserDashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -95,7 +100,9 @@ import { RegisterComponent } from './pages/userLoginRegister/register/register.c
     MatGridListModule,
     MatDialogModule,
   ],
-  providers: [],
+  providers: [
+    authInterceptorProviders
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

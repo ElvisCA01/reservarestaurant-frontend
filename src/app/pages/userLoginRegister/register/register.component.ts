@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {LoginServiceService} from "../../../services/login/login-service.service";
+import {RegisterServiceService} from "../../../services/register/register-service.service";
 
 @Component({
   selector: 'app-register',
@@ -17,7 +18,7 @@ export class RegisterComponent implements OnInit {
     telefono: '',
   }
 
-  constructor(private userService:LoginServiceService) { }
+  constructor(private registerService:RegisterServiceService) { }
 
   formSubmit(){
     console.log(this.user);
@@ -25,7 +26,7 @@ export class RegisterComponent implements OnInit {
       alert("El nombre de usuario es requerido");
       return;
     }
-    this.userService.añadirUsuario(this.user)
+    this.registerService.añadirUsuario(this.user)
       .subscribe(res=>{
         console.log(res);
         alert('Usuario guardado con exito!');

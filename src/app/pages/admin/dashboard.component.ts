@@ -1,25 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import {LoginServiceService} from "../../services/login/login-service.service";
 
-
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class DashboardComponent implements OnInit {
 
   constructor(public login: LoginServiceService) { }
 
   ngOnInit(): void {
-
-
   }
 
   public logout(){
     this.login.logout();
     window.location.reload();
   }
-
 
 }
