@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {LoginServiceService} from "../../services/login/login-service.service";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -9,7 +10,7 @@ import {LoginServiceService} from "../../services/login/login-service.service";
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(public login: LoginServiceService) { }
+  constructor(public login: LoginServiceService,private router:Router) { }
 
   ngOnInit(): void {
 
@@ -18,7 +19,7 @@ export class HeaderComponent implements OnInit {
 
   public logout(){
     this.login.logout();
-    window.location.reload();
+    this.router.navigate(['/login'])
   }
 
 

@@ -34,7 +34,6 @@ export class LoginComponent implements OnInit {
 
 
   formSubmit(){
-    console.log('Click')
     if(this.loginData.username.trim() == '' || this.loginData.password.trim() == null){
       this._snackBar.open('El nombre de usuario es requerido !!','Aceptar',{
         duration: 3000
@@ -49,20 +48,19 @@ export class LoginComponent implements OnInit {
     }
     this.loginService.generateToken(this.loginData)
       .subscribe((data:any)=>{
-        console.log(data);
           this.loginService.loginUser(data.token);
           this.loginService.getCurrentUser()
             .subscribe((user:any)=>{
               this.loginService.setUser(user);
-              console.log(user);
-
               if(this.loginService.getUserRole() == "ADMIN"){
+                this.adminLoading();
                 //Mostraremos el dashboard del admin
-                this.router.navigate(['admin'])
+                //this.router.navigate(['admin'])
                 this.loginService.loginStatusSubject.next(true);
               }else if(this.loginService.getUserRole() == "NORMAL"){
+                this.normalLoading();
                 //Mostraremos el dashboard del usuario
-                this.router.navigate(['user-dashboard'])
+                //this.router.navigate(['user-dashboard'])
                 this.loginService.loginStatusSubject.next(true);
               }
               else {
@@ -70,10 +68,7 @@ export class LoginComponent implements OnInit {
               }
             })
       },(error) =>{
-              console.log(error);
-              this._snackBar.open('Detalles invalidos, intentalo de nuevo!', "Aceptar",{
-                duration:3000
-              })
+              this.error();
            }
         )
     }
@@ -81,35 +76,30 @@ export class LoginComponent implements OnInit {
 
 
 
-  ingresar() {
-    const usuario = this.form.value.usuario;
-    const password = this.form.value.password;
-
-    if (usuario == 'admin' && password == 'admin123' || usuario == 'usuario' && password == '123') {
-      this.fakeLoading();
-    } else {
-      this.error();
-      this.form.reset();
-    }
-  }
-
-
-
 
   error(){
-    this._snackBar.open('Usuario o contraseña invalidos','',{
+    this._snackBar.open('Usuario o contraseña invalidos','Aceptar',{
       duration: 5000,
       horizontalPosition: 'center',
       verticalPosition: "bottom"
     })
   }
 
-  fakeLoading(){
+  adminLoading(){
     this.loading = true;
     setTimeout(()=>{
 
       //redireccionamos a la pagina principal
-      this.router.navigate(['/Principal']);
+      this.router.navigate(['admin']);
+      this.loading=false;
+    }, 1000)
+  }
+  normalLoading(){
+    this.loading = true;
+    setTimeout(()=>{
+
+      //redireccionamos a la pagina principal
+      this.router.navigate(['user-dashboard']);
       this.loading=false;
     }, 1000)
   }
