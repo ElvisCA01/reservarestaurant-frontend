@@ -24,7 +24,7 @@ import {NormalGuard} from "./services/normalGuard/normal.guard";
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'login',
     component: LoginComponent,
     pathMatch: 'full'
   },
@@ -34,9 +34,9 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'Principal',
+    path: '',
     component: PrincipalComponent,
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   {
     path: 'bookingPeopleFinished',
@@ -51,12 +51,14 @@ const routes: Routes = [
   {
     path: 'searchBooking',
     component: SearchBookingComponent,
-    pathMatch: 'full'
+    pathMatch: 'full',
+    canActivate: [NormalGuard, AdminGuard]
   },
   {
     path: 'searchBookingQuery',
     component: SearchBookingQueryComponent,
-    pathMatch: 'full'
+    pathMatch: 'full',
+    canActivate: [NormalGuard, AdminGuard]
   },
   {
     path: 'Us',
@@ -71,7 +73,8 @@ const routes: Routes = [
   {
     path: 'adminBooking',
     component: AdminBookingComponent,
-    pathMatch: 'full'
+    pathMatch: 'full',
+    canActivate: [AdminGuard]
   },
   {
     path: 'reserva',
@@ -86,12 +89,16 @@ const routes: Routes = [
   {
     path: 'editBooking/:id',
     component: EditBookingComponent,
-    pathMatch: 'full'
+    pathMatch: 'full',
+    canActivate: [AdminGuard]
+
   },
   {
     path: 'watchBooking/:id',
     component: WatchBookingComponent,
-    pathMatch: 'full'
+    pathMatch: 'full',
+    canActivate: [AdminGuard]
+
   },
   {
     path: 'register',

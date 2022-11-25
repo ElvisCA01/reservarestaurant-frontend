@@ -6,7 +6,7 @@
     <div class="flex w-full lg:w-1/2 justify-center items-center space-y-8">
       <div class="w-full px-8 md:px-32 lg:px-24">
 
-        <mat-spinner *ngIf="loading" diameter="50" class="m-auto my-2"></mat-spinner>
+        <mat-spinner *ngIf="loading" diameter="50" class="m-auto my-2" value="warn"></mat-spinner>
 
         <form class="bg-white rounded-md shadow-2xl p-5" *ngIf="!loading" (ngSubmit)="formSubmit()">
           <h1 class="text-gray-800 font-bold text-2xl mb-1">WAKAPIEDRA LOGIN!</h1>
