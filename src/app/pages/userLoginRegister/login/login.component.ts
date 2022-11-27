@@ -34,12 +34,14 @@ export class LoginComponent implements OnInit {
 
 
   formSubmit(){
+    //Verifica si hay un username ingresado
     if(this.loginData.username.trim() == '' || this.loginData.password.trim() == null){
       this._snackBar.open('El nombre de usuario es requerido !!','Aceptar',{
         duration: 3000
       })
       return;
     }
+    //Verifica si hay una password ingresada
     if(this.loginData.password.trim() == '' || this.loginData.password.trim() == null){
       this._snackBar.open('La contraseña es requerida !!','Aceptar',{
         duration: 3000

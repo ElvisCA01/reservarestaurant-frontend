@@ -14,6 +14,15 @@ Clickup: https://app.clickup.com/25729323/v/l/li/211557105
 Documento del proyecto: https://docs.google.com/document/d/1R_UCj9SoLuIKIjbDc9eyQoKLyyMn_yfM/edit?usp=sharing&ouid=113751009072410060902&rtpof=true&sd=true  
 Figma: https://www.figma.com/file/o4Bp5RORPwv2c9qEcVfIe8/Pagina-Waka-Piedra?node-id=72%3A11  
 
+Estilos:   
+-Angular material  
+-Tailwind css  
+Base de datos:  
+MySQL - MariaDB
+Backend:  
+Springboot
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.3.
 
 ## Development server
