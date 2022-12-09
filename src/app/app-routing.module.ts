@@ -21,6 +21,7 @@ import {DashboardComponent} from "./pages/admin/dashboard.component";
 import {UserDashboardComponent} from "./pages/user/user-dashboard.component";
 import {AdminGuard} from "./services/adminGuard/admin.guard";
 import {NormalGuard} from "./services/normalGuard/normal.guard";
+import {IsLoggedInGuard} from "./services/isLoggedIn/is-logged-in.guard";
 
 const routes: Routes = [
   {
@@ -52,13 +53,13 @@ const routes: Routes = [
     path: 'searchBooking',
     component: SearchBookingComponent,
     pathMatch: 'full',
-    canActivate: [NormalGuard, AdminGuard]
+    canActivate: [IsLoggedInGuard]
   },
   {
     path: 'searchBookingQuery',
     component: SearchBookingQueryComponent,
     pathMatch: 'full',
-    canActivate: [NormalGuard, AdminGuard]
+    canActivate: [IsLoggedInGuard]
   },
   {
     path: 'Us',

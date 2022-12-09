@@ -37,7 +37,6 @@ export class ReservaComponent implements OnInit {
     console.log(this.formReserva.value)
     this.api.registrarReserva(this.formReserva.value)
       .subscribe(response =>{
-        this.navigateToFoods();
       })
   }
 
