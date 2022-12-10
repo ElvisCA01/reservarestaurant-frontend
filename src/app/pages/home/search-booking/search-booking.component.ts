@@ -5,7 +5,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { animate, state, style, transition, trigger} from '@angular/animations';
 import {Title} from "@angular/platform-browser";
-import {Reserva} from "../../../classes/reserva/reserva";
+import {Reserva} from "../../../classes/reserva/reserva.model";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {MatDialog} from "@angular/material/dialog";
@@ -35,7 +35,7 @@ export class SearchBookingComponent implements OnInit, AfterViewInit{
 
 
   CargarBookings(){
-    this.api.getBookings().subscribe(dato=>{
+    this.api.listarReservas().subscribe(dato=>{
       this.Reservas=dato;
       this.finalData=new MatTableDataSource<Reserva>(this.Reservas);
       this.finalData.paginator=this._paginator;

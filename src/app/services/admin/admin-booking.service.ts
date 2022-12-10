@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {Reserva} from "../../classes/reserva/reserva";
+import {Reserva} from "../../classes/reserva/reserva.model";
+import {environment} from "../../../environments/environment"
 
 @Injectable({
   providedIn: 'root'
@@ -9,23 +10,15 @@ import {Reserva} from "../../classes/reserva/reserva";
 export class AdminBookingService {
 
   constructor(private http:HttpClient) { }
-    private apiurlReservas = 'http://localhost:8080/api/reservas';
-    apiurlComidas  = '';
-
-
-
-    //Consigue las reservas
-   getBookings():Observable<Reserva[]>{
-      return this.http.get<Reserva[]>(this.apiurlReservas);
-   }
+    private apiurlReservas = environment.baseUrl;
 
    //Registra las reservas
-   registrarReserva(reserva:Reserva): Observable<any>{
-     return this.http.post(this.apiurlReservas,reserva);
+   agregarReserva(reserva:Reserva){
+     return this.http.post(`${this.apiurlReservas}/reserva`,reserva);
    }
-  //Sirve para obtener o buscar una reserva
-  obtenerReservaPorId(id:number):Observable<any>{
-    return this.http.get<Reserva>(`${this.apiurlReservas}/${id}`);
+  //Sirve para listar reservas
+  listarReservas(){
+    return this.http.get<Reserva[]>(`${this.apiurlReservas}/reserva/listar`);
   }
    //Actualiza la reserva
   actualizarReserva(id:number,reserva:Reserva):Observable<any>{

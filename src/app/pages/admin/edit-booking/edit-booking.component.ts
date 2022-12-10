@@ -33,7 +33,7 @@ export class EditBookingComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
-    this.api.obtenerReservaPorId(this.id)
+    this.api.listarReservas()
       .subscribe(data =>{
         this.formReserva.patchValue(data);
       })

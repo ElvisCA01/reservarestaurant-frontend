@@ -8,7 +8,7 @@ import {Router} from "@angular/router";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Title} from "@angular/platform-browser";
 import {MatDialog,MAT_DIALOG_DATA} from "@angular/material/dialog";
-import {Reserva} from "../../../classes/reserva/reserva";
+import {Reserva} from "../../../classes/reserva/reserva.model";
 
 @Component({
   selector: 'app-admin-booking',
@@ -16,7 +16,7 @@ import {Reserva} from "../../../classes/reserva/reserva";
   styleUrls: ['./admin-booking.component.scss']
 })
 export class AdminBookingComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'nombre','papellido','sapellido', 'personas', 'evento','fecha','horario','acciones'];
+  displayedColumns: string[] = ['id', 'nombre','papellido','sapellido', 'personas', 'evento','fecha','horario','total','acciones'];
   Reservas: Reserva[];
   @ViewChild(MatPaginator) _paginator!:MatPaginator;
   @ViewChild(MatSort) _sort!:MatSort;
@@ -39,6 +39,7 @@ export class AdminBookingComponent implements OnInit {
       personas: ['',Validators.required],
       fecha: ['',Validators.required],
       horario: ['',Validators.required],
+      total: ['', Validators.required]
     })
   }
 
@@ -56,7 +57,7 @@ export class AdminBookingComponent implements OnInit {
   }
 
   CargarReservas(){
-    this.api.getBookings().subscribe(dato=>{
+    this.api.listarReservas().subscribe(dato=>{
       this.Reservas=dato;
       this.finalData=new MatTableDataSource<Reserva>(this.Reservas);
       this.finalData.paginator=this._paginator;

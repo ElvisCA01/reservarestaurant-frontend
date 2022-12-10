@@ -1,3 +1,5 @@
+import {ReservaItem} from "./reserva-item.model"
+
 export class Reserva {
 
   id:number;
@@ -7,7 +9,7 @@ export class Reserva {
   sapellido:string;
   horario: string;
   evento: string;
-  fecha: Date;
+  items: ReservaItem[];
 
 }
 

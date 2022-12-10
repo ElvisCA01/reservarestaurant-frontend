@@ -1,4 +1,4 @@
-import { Reserva } from './reserva';
+import { Reserva } from './reserva.model';
 
 describe('Reserva', () => {
   it('should create an instance', () => {

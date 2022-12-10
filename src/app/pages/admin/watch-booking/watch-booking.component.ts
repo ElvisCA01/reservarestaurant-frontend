@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {AdminBookingService} from "../../../services/admin/admin-booking.service";
 import {ActivatedRoute, Router} from "@angular/router";
-import {Reserva} from "../../../classes/reserva/reserva";
+import {Reserva} from "../../../classes/reserva/reserva.model";
 import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
@@ -59,9 +59,10 @@ export class WatchBookingComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
-    this.api.obtenerReservaPorId(this.id)
+    this.api.listarReservas()
       .subscribe(data =>{
         this.formReserva.patchValue(data);
+        console.log(this.id);
       })
   }
 
