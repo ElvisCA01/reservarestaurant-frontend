@@ -49,6 +49,7 @@ import { RegisterComponent } from './pages/userLoginRegister/register/register.c
 import {authInterceptorProviders} from "./services/auth.interceptor";
 import { DashboardComponent } from './pages/admin/dashboard.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 
 
@@ -73,6 +74,7 @@ import { UserDashboardComponent } from './pages/user/user-dashboard.component';
     RegisterComponent,
     DashboardComponent,
     UserDashboardComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,

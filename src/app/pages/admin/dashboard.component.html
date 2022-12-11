@@ -1,7 +1,7 @@
 
 <nav class="font-sans flex flex-col text-center sm:flex-row sm:text-left sm:justify-between bg-green-400 shadow sm:items-baseline w-full ">
   <div class="mb-2 sm:mb-0">
-    <a routerLink="" class="text-2xl no-underline text-grey-darkest hover:text-blue-dark pl-2">
+    <a routerLink="/admin" class="text-2xl no-underline text-grey-darkest hover:text-blue-dark pl-2">
       <img src="./assets/img/img1.png" class="inline w-24 h-20">
       Restaurante Waka Piedra</a>
   </div>
@@ -53,6 +53,11 @@
       </svg>
       Administración
     </a>
+    <a *ngIf="login.isLoggedIn()" routerLink="/profile" class="text-lg no-underline text-grey-darkest hover:text-blue-dark ml-2">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-person-fill inline" viewBox="0 0 16 16">
+        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+      </svg>
+      Perfil</a>
     <a class="mt-0">
       <img src="../../../assets/img/header_img.JPG" class="inline h-24 w-40 ml-4">
     </a>

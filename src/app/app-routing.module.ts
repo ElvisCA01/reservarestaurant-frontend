@@ -22,6 +22,7 @@ import {UserDashboardComponent} from "./pages/user/user-dashboard.component";
 import {AdminGuard} from "./services/adminGuard/admin.guard";
 import {NormalGuard} from "./services/normalGuard/normal.guard";
 import {IsLoggedInGuard} from "./services/isLoggedIn/is-logged-in.guard";
+import {ProfileComponent} from "./pages/profile/profile.component";
 
 const routes: Routes = [
   {
@@ -52,14 +53,12 @@ const routes: Routes = [
   {
     path: 'searchBooking',
     component: SearchBookingComponent,
-    pathMatch: 'full',
-    canActivate: [IsLoggedInGuard]
+    pathMatch: 'full'
   },
   {
     path: 'searchBookingQuery',
     component: SearchBookingQueryComponent,
-    pathMatch: 'full',
-    canActivate: [IsLoggedInGuard]
+    pathMatch: 'full'
   },
   {
     path: 'Us',
@@ -110,7 +109,16 @@ const routes: Routes = [
     path: 'admin',
     component: DashboardComponent,
     pathMatch: 'full',
-    canActivate: [AdminGuard]
+    canActivate: [AdminGuard],
+    children:[
+
+    ]
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent,
+    pathMatch: 'full',
+    canActivate: [IsLoggedInGuard]
   },
   {
     path: 'user-dashboard',

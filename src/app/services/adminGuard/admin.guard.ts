@@ -18,11 +18,6 @@ export class AdminGuard implements CanActivate {
     if(this.loginService.isLoggedIn() && this.loginService.getUserRole()== "ADMIN"){
       return true;
     }else {
-      this._snackBar.open('No estas conectado como administrador!','',{
-        duration: 5000,
-        horizontalPosition: 'center',
-        verticalPosition: "bottom"
-      })
       this.router.navigate(['/login'])
       return false;
     }

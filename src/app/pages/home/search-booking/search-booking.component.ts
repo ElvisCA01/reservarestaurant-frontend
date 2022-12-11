@@ -21,7 +21,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
   styleUrls: ['./search-booking.component.scss'],
 })
 export class SearchBookingComponent implements OnInit, AfterViewInit{
-  displayedColumns: string[] = ['id', 'nombre','papellido','sapellido', 'personas', 'evento','fecha','horario'];
+  displayedColumns: string[] = ['id', 'nombre','papellido','sapellido', 'personas', 'evento','fecha','horario','total'];
   Reservas: Reserva[];
   form: FormGroup;
 
@@ -46,16 +46,6 @@ export class SearchBookingComponent implements OnInit, AfterViewInit{
 
   constructor(private http:HttpClient,private _snackbar:MatSnackBar,private dialog: MatDialog,private titulo:Title,private _tablesService:AdminBookingService, private _snackBar: MatSnackBar, private router:Router, private fb:FormBuilder,private api:AdminBookingService) {
     titulo.setTitle('Busca tu reserva!')
-    this.form = this.fb.group({
-      id: ['',Validators.required, Validators.pattern("[0-9]")],
-      nombre: ['',Validators.required],
-      papellido: ['',Validators.required],
-      sapellido: ['',Validators.required],
-      evento: ['',Validators.required],
-      personas: ['',Validators.required],
-      fecha: ['',Validators.required],
-      horario: ['',Validators.required],
-    })
   }
 
   ngOnInit(): void {
