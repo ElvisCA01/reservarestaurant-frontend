@@ -50,6 +50,10 @@ import {authInterceptorProviders} from "./services/auth.interceptor";
 import { DashboardComponent } from './pages/admin/dashboard.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { NewPlatoComponent } from './pages/admin/platos/new-plato/new-plato.component';
+import { UpdatePlatoComponent } from './pages/admin/platos/update-plato/update-plato.component';
+import { ListPlatoComponent } from './pages/admin/platos/list-plato/list-plato.component';
+import { FormPlatoComponent } from './pages/admin/platos/shared/form-plato/form-plato.component';
 
 
 
@@ -75,6 +79,10 @@ import { ProfileComponent } from './pages/profile/profile.component';
     DashboardComponent,
     UserDashboardComponent,
     ProfileComponent,
+    NewPlatoComponent,
+    UpdatePlatoComponent,
+    ListPlatoComponent,
+    FormPlatoComponent,
   ],
   imports: [
     BrowserModule,

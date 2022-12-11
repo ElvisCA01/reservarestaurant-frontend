@@ -14,6 +14,10 @@ import {AdminBookingComponent} from "./pages/admin/admin-booking/admin-booking.c
 import {EditBookingComponent} from "./pages/admin/edit-booking/edit-booking.component";
 import {WatchBookingComponent} from "./pages/admin/watch-booking/watch-booking.component";
 
+import {ListPlatoComponent} from "../app/pages/admin/platos/list-plato/list-plato.component"
+import {NewPlatoComponent} from "../app/pages/admin/platos/new-plato/new-plato.component"
+import {UpdatePlatoComponent} from "../app/pages/admin/platos/update-plato/update-plato.component"
+
 import {ReservaComponent} from "./pages/DoReserva/reserva/reserva.component";
 import {ComidasComponent} from "./pages/DoReserva/comidas/comidas.component";
 import {RegisterComponent} from "./pages/userLoginRegister/register/register.component";
@@ -117,6 +121,24 @@ const routes: Routes = [
   {
     path: 'profile',
     component: ProfileComponent,
+    pathMatch: 'full',
+    canActivate: [IsLoggedInGuard]
+  },
+  {
+    path: 'plato',
+    component: ListPlatoComponent,
+    pathMatch: 'full',
+    canActivate: [IsLoggedInGuard]
+  },
+  {
+    path: 'plato/new',
+    component: NewPlatoComponent,
+    pathMatch: 'full',
+    canActivate: [IsLoggedInGuard]
+  },
+  {
+    path: 'plato/:id/edit',
+    component: UpdatePlatoComponent,
     pathMatch: 'full',
     canActivate: [IsLoggedInGuard]
   },
