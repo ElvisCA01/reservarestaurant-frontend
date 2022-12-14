@@ -6,9 +6,7 @@
   <div class="col-md-offset-3 mx-auto">
     <form
       (ngSubmit)="onSubmit()"
-      autocomplete="off"
-      #frmLibro="ngForm"
-    >
+      autocomplete="off">
       <mat-form-field appearance="outline" class="d-block">
         <mat-label>Nombre</mat-label>
         <input
@@ -39,9 +37,7 @@
         mat-raised-button
         color="primary"
         type="submit"
-        class="ms-2"
-        [disabled]="frmLibro.invalid"
-      >
+        class="ms-2">
         Guardar
       </button>
     </form>

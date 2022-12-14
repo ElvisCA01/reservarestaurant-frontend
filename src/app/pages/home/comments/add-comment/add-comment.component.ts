@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Comentarios} from "../../../../classes/comentarios/comentarios";
 import {CommentsService} from "../../../../services/commentsService/comments.service";
 import {Router} from "@angular/router";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-add-comment',
@@ -13,7 +14,7 @@ export class AddCommentComponent implements OnInit {
 
   Comentarios : Comentarios = new Comentarios();
 
-  constructor(private commentService: CommentsService,private router: Router) { }
+  constructor(private _snackbar:MatSnackBar,private commentService: CommentsService,private router: Router) { }
 
   ngOnInit(): void {
 
@@ -27,6 +28,8 @@ export class AddCommentComponent implements OnInit {
         this.navigateToComments();
       })
   }
+
+
   navigateToComments(){
     this.router.navigate(["/comentarios"]);
   }
