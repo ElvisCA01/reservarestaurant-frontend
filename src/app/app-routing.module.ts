@@ -27,6 +27,8 @@ import {AdminGuard} from "./services/adminGuard/admin.guard";
 import {NormalGuard} from "./services/normalGuard/normal.guard";
 import {IsLoggedInGuard} from "./services/isLoggedIn/is-logged-in.guard";
 import {ProfileComponent} from "./pages/profile/profile.component";
+import {CommentsComponent} from "./pages/home/comments/listComments/comments.component";
+import {AddCommentComponent} from "./pages/home/comments/add-comment/add-comment.component";
 
 const routes: Routes = [
   {
@@ -147,6 +149,15 @@ const routes: Routes = [
     component: UserDashboardComponent,
     pathMatch: 'full',
     canActivate: [NormalGuard]
+  },
+  {
+    path: 'comentarios',
+    component: CommentsComponent,
+    canActivate: [IsLoggedInGuard],
+  },
+  {
+    path: 'comentarios/addComment',
+    component: AddCommentComponent
   }
 ];
 

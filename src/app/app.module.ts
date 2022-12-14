@@ -54,6 +54,8 @@ import { NewPlatoComponent } from './pages/admin/platos/new-plato/new-plato.comp
 import { UpdatePlatoComponent } from './pages/admin/platos/update-plato/update-plato.component';
 import { ListPlatoComponent } from './pages/admin/platos/list-plato/list-plato.component';
 import { FormPlatoComponent } from './pages/admin/platos/shared/form-plato/form-plato.component';
+import { CommentsComponent } from './pages/home/comments/listComments/comments.component';
+import { AddCommentComponent } from './pages/home/comments/add-comment/add-comment.component';
 
 
 
@@ -83,6 +85,8 @@ import { FormPlatoComponent } from './pages/admin/platos/shared/form-plato/form-
     UpdatePlatoComponent,
     ListPlatoComponent,
     FormPlatoComponent,
+    CommentsComponent,
+    AddCommentComponent,
   ],
   imports: [
     BrowserModule,
