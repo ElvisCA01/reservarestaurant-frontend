@@ -9,6 +9,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Title} from "@angular/platform-browser";
 import {MatDialog,MAT_DIALOG_DATA} from "@angular/material/dialog";
 import {Reserva} from "../../../classes/reserva/reserva.model";
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-admin-booking',
@@ -48,12 +49,31 @@ export class AdminBookingComponent implements OnInit {
     this.router.navigate(['/editBooking',id]);
   }
 
-  eliminarReserva(id:number){
-    this.api.eliminarReserva(id)
-      .subscribe(dato=>{
-        console.log(dato);
-        this.CargarReservas();
-      })
+  delete(id:number){
+    Swal.fire({
+      title: '¿Estás seguro qué deseas eliminar la mascota?',
+      text: "La acción no se puede revertir",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí, eliminar!'
+    }).then((result:any) => {
+      if (result.isConfirmed) {
+        this.api.eliminarReserva(id).subscribe(()=>{
+          this.CargarReservas();
+        })
+        Swal.fire(
+          'Eliminado!',
+          'Eliminaste la reserva.',
+          'success'
+        ).then(okay =>{
+          if(okay){
+            window.location.reload();
+          }
+        })
+      }
+    })
   }
 
   CargarReservas(){

@@ -78,14 +78,15 @@
                   Acciones
                 </th>
                 <td mat-cell *matCellDef="let Reserva" class="align-middle">
-                  <a class="cursor-pointer ml-2 text-blue-900" matTooltip="Ver Comida">
-                    <button (click)="verReserva(Reserva.id)" mat-raised-button color="primary">Ver comidas</button>
-                  </a>
-                  <a class="cursor-pointer ml-2 text-blue-900" matTooltip="Editar usuario">
-                    <button (click)="editBooking(Reserva.id)" mat-raised-button color="primary">Editar</button>
+                  <a class="cursor-pointer ml-2 text-red-800" matTooltip="Ver productos">
+                    <button mat-button color="primary" (click)="verReserva(Reserva.id)">
+                      <mat-icon>view_agenda</mat-icon>
+                    </button>
                   </a>
                   <a class="cursor-pointer ml-2 text-red-800" matTooltip="Eliminar reserva">
-                    <button (click)="eliminarReserva(Reserva.id)" mat-raised-button color="warn">Eliminar</button>
+                    <button mat-button color="primary" (click)="delete(Reserva.id)">
+                      <mat-icon>delete</mat-icon>
+                    </button>
                   </a>
                 </td>
               </ng-container>

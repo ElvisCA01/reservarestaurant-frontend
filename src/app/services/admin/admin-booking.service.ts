@@ -27,7 +27,12 @@ export class AdminBookingService {
 
   //Elimina la reserva
   eliminarReserva(id:number):Observable<any>{
-     return this.http.delete(`${this.apiurlReservas}/${id}`);
+     return this.http.delete(`${this.apiurlReservas}/reserva/${id}`);
+  }
+
+  //buscar reserva por id
+  get(id: number){
+    return this.http.get(`${this.apiurlReservas}/reserva/listar/${id}`);
   }
 
 

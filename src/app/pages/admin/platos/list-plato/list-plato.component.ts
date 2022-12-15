@@ -25,7 +25,6 @@ export class ListPlatoComponent implements OnInit {
   getPlatos() {
     this.service.getPlato().subscribe((data: any) => {
       this.dataSource = new MatTableDataSource(data);
-      console.log(this.dataSource);
     });
   }
 
@@ -33,15 +32,6 @@ export class ListPlatoComponent implements OnInit {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-
-  //delete(id: number) {
-  //  const ok = confirm('¿Estás seguro de eliminar el café?');
-  //  if (ok) {
-  //    this.service.deletePlato(id).subscribe(() => {
-  //      this.getPlatos();
-  //    });
-  //  }
-  //}
 
   delete(id:number){
     Swal.fire({
