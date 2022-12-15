@@ -8,9 +8,13 @@ import {LoginServiceService} from "../../services/login/login-service.service";
 })
 export class DashboardComponent implements OnInit {
 
+
+  user: any=null;
+
   constructor(public login: LoginServiceService) { }
 
   ngOnInit(): void {
+    this.user = this.login.getUser();
   }
 
   public logout(){

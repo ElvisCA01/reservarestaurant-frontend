@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Title} from "@angular/platform-browser";
+import {LoginServiceService} from "../../../services/login/login-service.service";
 
 
 @Component({
@@ -9,13 +10,14 @@ import {Title} from "@angular/platform-browser";
 })
 export class PrincipalComponent implements OnInit {
 
+  user: any=null;
 
-
-  constructor(private titulo:Title) {
+  constructor(private titulo:Title,public login: LoginServiceService) {
       titulo.setTitle('Pagina principal')
   }
 
   ngOnInit(): void {
+    this.user = this.login.getUser();
   }
 
 

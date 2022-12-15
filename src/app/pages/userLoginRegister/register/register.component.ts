@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {LoginServiceService} from "../../../services/login/login-service.service";
 import {RegisterServiceService} from "../../../services/register/register-service.service";
+import Swal from "sweetalert2";
 
 @Component({
   selector: 'app-register',
@@ -29,8 +30,11 @@ export class RegisterComponent implements OnInit {
     this.registerService.añadirUsuario(this.user)
       .subscribe(res=>{
         console.log(res);
-        alert('Usuario guardado con exito!');
-      },error => {
+        Swal.fire(
+          'Registrado Correctamente',
+          'Gracias!',
+          'success'
+        )      },error => {
         console.log(error);
       })
   }
