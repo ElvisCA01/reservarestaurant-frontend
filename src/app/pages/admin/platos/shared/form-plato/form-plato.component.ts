@@ -12,6 +12,7 @@ import {Plato} from '../../../../../classes/plato/plato.model';
 export class FormPlatoComponent implements OnInit {
 
   form: FormGroup;
+  categoria: any[] = ['Platillos','Postres','Bebidas','Adicionales'];
 
   @Input() plato: Plato = new Plato();
   @Output() onSubmit: EventEmitter<any> = new EventEmitter();
@@ -24,14 +25,8 @@ export class FormPlatoComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
-      categoria: [
-        this.plato.categoria,
-        [
-          Validators.required,
-          Validators.minLength(3),
-          Validators.maxLength(60),
-        ],
-      ],
+      categoria: [this.plato.categoria, [Validators.required, Validators.minLength(3),
+          Validators.maxLength(60)]],
       nombre: [this.plato.nombre, [Validators.required]],
       price: [this.plato.price, [Validators.required, Validators.min(1)]],
     });

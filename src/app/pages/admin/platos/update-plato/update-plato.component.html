@@ -1,5 +1,52 @@
 <app-header></app-header>
 <div class="shadow-md px-8 pt-6 pb-8 w-8/12 flex flex-col mx-auto bg-gray-100 mx-12 my-10 w-auto rounded-3xl text-gray-500">
-    <h1>Actualizar plato</h1>
-    <app-form-plato (onSubmit)="updatePlato($event)" [plato]="plato"></app-form-plato>
+<div class="row">
+    <div class="col-md-offset-3 mx-auto">
+        <h1>Actualizar plato</h1>
+      <form  autocomplete="off" [formGroup]="form" (ngSubmit)="save()" #frmLibro="ngForm">
+
+        <mat-form-field class="d-block">
+            <mat-label>Categoria</mat-label>
+            <mat-select formControlName="categoria">
+              <mat-option *ngFor="let categoria of categoria" [value]="categoria">
+                {{categoria}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+        <mat-form-field appearance="outline" class="d-block">
+            <mat-label>Nombre</mat-label>
+            <input
+              matInput
+              type="text"
+              placeholder="Nombre"
+              formControlName="nombre"
+            />
+          </mat-form-field>
+
+        <mat-form-field appearance="outline" class="d-block">
+          <mat-label>Precio</mat-label>
+          <input
+            matInput
+            type="number"
+            placeholder="Precio"
+            formControlName="price"
+          />
+          
+        </mat-form-field>
+
+        <button mat-raised-button routerLink="/plato" color="primary">Cancelar</button>
+
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          class="ms-2"
+          [disabled]="frmLibro.invalid"
+        >
+          Guardar
+        </button>
+      </form>
+    </div>
+  </div>
 </div>

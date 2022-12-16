@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Plato } from "../../../../classes/plato/plato.model";
 import { SharedPlatoService } from "../shared/shared.plato.service";
@@ -11,7 +12,9 @@ import { SharedPlatoService } from "../shared/shared.plato.service";
 export class UpdatePlatoComponent implements OnInit {
 
   private id: number;
-  public plato: Plato;
+  form: FormGroup;
+
+  categoria: any[] = ['Platillos','Postres','Bebidas','Adicionales'];
 
   constructor(public service: SharedPlatoService,
     private router:Router, public activeRoute:ActivatedRoute) { }
@@ -19,17 +22,27 @@ export class UpdatePlatoComponent implements OnInit {
   ngOnInit(): void {
     this.activeRoute.paramMap.subscribe(paramMap =>{
       this.id = Number(paramMap.get('id'));
-      this.service.get(this.id).subscribe((data:any)=>{
-        this.plato=data?.body;
-      });
-   })
+      console.log(this.id);
+   });
+
+   this.form = new FormGroup({
+    categoria: new FormControl(),
+    nombre: new FormControl(),
+    price: new FormControl(),
+  });
+
   }
 
-  updatePlato(plato: Plato){
+  save(){
+    let plato = new Plato;
     plato.id = this.id;
+    plato.categoria = this.form.value['categoria'];
+    plato.nombre = this.form.value['nombre'];
+    plato.price = this.form.value['price'];
+    console.log(plato);
     this.service.updatePlato(plato).subscribe(() => {
-      this.router.navigate(['/plato'])
-    })
+      this.router.navigate(['/plato']);
+    }, (err: any) =>{})
   }
 
 }

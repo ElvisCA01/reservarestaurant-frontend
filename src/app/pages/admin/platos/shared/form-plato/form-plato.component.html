@@ -1,19 +1,17 @@
 <div class="row">
     <div class="col-md-offset-3 mx-auto">
-      <form
-        (ngSubmit)="save()"
-        autocomplete="off"
-        [formGroup]="form"
-        #frmLibro="ngForm"
-      >
-        <mat-form-field appearance="outline" class="d-block">
+      <form (ngSubmit)="save()" autocomplete="off" [formGroup]="form" #frmLibro="ngForm">
+
+        <mat-form-field class="d-block">
           <mat-label>Categoria</mat-label>
-          <input
-            matInput
-            type="text"
-            placeholder="Categoria"
-            formControlName="categoria"
-          />
+          <mat-select formControlName="categoria">
+            <mat-option *ngFor="let categoria of categoria" [value]="categoria">
+              {{categoria}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="form.hasError('required', 'categoria')">
+            Este campo es obligatorio
+          </mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="outline" class="d-block">
@@ -24,6 +22,9 @@
               placeholder="Nombre"
               formControlName="nombre"
             />
+            <mat-error *ngIf="form.hasError('required', 'nombre')">
+              Este campo es obligatorio
+            </mat-error>
           </mat-form-field>
 
         <mat-form-field appearance="outline" class="d-block">
@@ -34,6 +35,9 @@
             placeholder="Precio"
             formControlName="price"
           />
+          <mat-error *ngIf="form.hasError('required', 'price')">
+            Este campo es obligatorio
+          </mat-error>
         </mat-form-field>
 
         <button mat-raised-button routerLink="/plato" color="primary">Cancelar</button>
