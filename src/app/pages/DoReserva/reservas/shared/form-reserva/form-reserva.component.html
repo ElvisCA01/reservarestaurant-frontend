@@ -1,0 +1,120 @@
+<div style="margin-left: 550px; width: 450px" class="text-base shadow-md px-8 pt-6 pb-8 w-7/12 flex flex-col bg-gray-100 my-10 w-9/12 rounded-3xl text-gray-500">
+    <form autocomplete="off" [formGroup]="form" (ngSubmit)="save()" #frmOrder="ngForm">
+      <div>
+      <mat-form-field class="w-11/12">
+        <mat-label> ¿Cuantas personas vendrán?</mat-label>
+        <mat-select formControlName="personas">
+          <mat-option *ngFor="let personas of personas" [value]="personas">
+            {{personas}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      </div>
+      <div>
+      <mat-form-field class="w-11/12">
+        <mat-label>Nombre</mat-label>
+        <input matInput autocomplete="off" formControlName="nombre">
+      </mat-form-field>
+      </div>
+      <div>
+      <mat-form-field class="w-10/12">
+        <mat-label> Primer apellido</mat-label>
+        <input matInput autocomplete="off" formControlName="papellido" >
+      </mat-form-field>
+      </div>
+      <div>
+      <mat-form-field class="w-10/12">
+        <mat-label>Segundo apellido</mat-label>
+        <input matInput autocomplete="off" formControlName="sapellido" >
+      </mat-form-field>
+      </div>
+      <div>
+      <mat-form-field class="w-10/12">
+        <mat-label>Horario</mat-label>
+        <mat-select formControlName="horario">
+          <mat-option *ngFor="let horario of horario" [value]="horario" >
+            {{horario}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      </div>
+      <mat-form-field class="w-10/12">
+        <mat-label>Motivo del Evento</mat-label>
+        <textarea matInput autocomplete="off" formControlName="evento"></textarea>
+      </mat-form-field>
+    </form>
+</div>
+
+<div style="margin-left: 550px; width: 450px" class="text-base shadow-md px-8 pt-6 pb-8 w-7/12 flex flex-col bg-gray-100 my-10 w-9/12 rounded-3xl text-gray-500">
+    <form autocomplete="off" [formGroup]="form" (ngSubmit)="save()" #frmOrder="ngForm">
+      
+        <div>
+            <mat-form-field appearance="outline" class="w-11/12">
+                <mat-label>Producto</mat-label>
+                <input
+                  type="text"
+                  placeholder="Producto"
+                  matInput
+                  [matAutocomplete]="autoProducto"
+                  [formControl]="myControlPlato"
+                  formControlName="plato"
+                />
+        
+                <mat-autocomplete
+                  #autoProducto="matAutocomplete"
+                  [displayWith]="mostrarPlato"
+                >
+                  <mat-option *ngFor="let p of platosFiltrados$ | async" [value]="p">
+                    {{ p.nombre }}
+                  </mat-option>
+                </mat-autocomplete>
+              </mat-form-field>
+          </div>
+      
+        <div>
+        <mat-form-field class="w-11/12">
+            <mat-label>Cantidad</mat-label>
+            <mat-select formControlName="quantity">
+              <mat-option *ngFor="let cantidad of cantidad" [value]="cantidad">
+                {{cantidad}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <button
+          mat-raised-button
+          color="primary"
+          type="button"
+          (click)="agregarPlato()"
+        >
+          Agregar producto al detalle
+        </button>
+  
+        <button mat-raised-button color="primary" type="submit">Guardar</button>
+      </div>
+
+      <p></p>
+      <p>Plato - Precio - Cantidad</p>
+        <mat-toolbar *ngFor="let old of orderLines; let i = index">
+          {{ old.plato.nombre }} - {{ old.plato.price }} -{{ old.quantity }}
+          <span class="example-spacer"></span>
+          <button
+            mat-raised-button
+            color="warn"
+            type="button"
+            (click)="removerPlato(i)"
+          >
+            Eliminar
+          </button>
+        </mat-toolbar>
+      
+    </form>
+    <div class="text-end">
+        <button mat-raised-button color="primary" routerLink="/adminBooking">
+          Atras
+        </button>
+      </div>
+</div>
+  

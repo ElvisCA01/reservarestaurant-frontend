@@ -28,4 +28,8 @@ export class SharedPlatoService {
     return this.http.delete(`${this.apiBase}/plato/${id}`)
   }
 
+  get(id: number){
+    return this.http.get(`${this.apiBase}/plato/listar/${id}`);
+  }
+
 }

@@ -38,7 +38,8 @@ export class FormPlatoComponent implements OnInit {
   }
 
   save(){
-    this.onSubmit.emit(this.form.value)
+    this.onSubmit.emit(this.form.value),
+    console.log(this.form.value);
   }
 
 }

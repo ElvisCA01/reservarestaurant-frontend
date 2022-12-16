@@ -16,7 +16,7 @@ export class WatchBookingComponent implements OnInit {
   public lista: string[];
   private id:number;
   dataSource: MatTableDataSource<string>;
-  displayedColumns: string[] = ['id','categoria','nombre','precio'];
+  displayedColumns: string[] = ['id','categoria','nombre','precio', 'cantidad', 'total'];
 
   constructor(public service: AdminBookingService ,private activeRoute:ActivatedRoute,private _snackBar: MatSnackBar,private fb:FormBuilder, private _snackbar:MatSnackBar,private router:Router) {
     

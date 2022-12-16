@@ -18,6 +18,7 @@ import {ListPlatoComponent} from "../app/pages/admin/platos/list-plato/list-plat
 import {NewPlatoComponent} from "../app/pages/admin/platos/new-plato/new-plato.component"
 import {UpdatePlatoComponent} from "../app/pages/admin/platos/update-plato/update-plato.component"
 
+import { NewReservaComponent } from "../app/pages/DoReserva/reservas/new-reserva/new-reserva.component";
 import {ReservaComponent} from "./pages/DoReserva/reserva/reserva.component";
 import {ComidasComponent} from "./pages/DoReserva/comidas/comidas.component";
 import {RegisterComponent} from "./pages/userLoginRegister/register/register.component";
@@ -83,8 +84,13 @@ const routes: Routes = [
     canActivate: [AdminGuard]
   },
   {
-    path: 'reserva',
+    path: 'reserva1',
     component: ReservaComponent,
+    pathMatch: 'full'
+  },
+  {
+    path: 'reserva',
+    component: NewReservaComponent,
     pathMatch: 'full'
   },
   {

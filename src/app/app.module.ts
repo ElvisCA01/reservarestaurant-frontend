@@ -27,6 +27,9 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatDialogModule} from '@angular/material/dialog';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+
 
 
 //componentes
@@ -56,6 +59,8 @@ import { ListPlatoComponent } from './pages/admin/platos/list-plato/list-plato.c
 import { FormPlatoComponent } from './pages/admin/platos/shared/form-plato/form-plato.component';
 import { CommentsComponent } from './pages/home/comments/listComments/comments.component';
 import { AddCommentComponent } from './pages/home/comments/add-comment/add-comment.component';
+import { NewReservaComponent } from './pages/DoReserva/reservas/new-reserva/new-reserva.component';
+import { FormReservaComponent } from './pages/DoReserva/reservas/shared/form-reserva/form-reserva.component';
 
 
 
@@ -87,6 +92,8 @@ import { AddCommentComponent } from './pages/home/comments/add-comment/add-comme
     FormPlatoComponent,
     CommentsComponent,
     AddCommentComponent,
+    NewReservaComponent,
+    FormReservaComponent,
   ],
   imports: [
     BrowserModule,
@@ -95,12 +102,14 @@ import { AddCommentComponent } from './pages/home/comments/add-comment/add-comme
     MatCheckboxModule,
     MatRadioModule,
     FormsModule,
+    MatAutocompleteModule,
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
     MatDatepickerModule,
     MatNativeDateModule,
     MatCardModule,
+    MatToolbarModule,
     HttpClientModule,
     MatTableModule,
     MatIconModule,
