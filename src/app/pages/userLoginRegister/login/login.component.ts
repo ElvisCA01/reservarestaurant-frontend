@@ -102,7 +102,7 @@ export class LoginComponent implements OnInit {
     setTimeout(()=>{
 
       //redireccionamos a la pagina principal
-      this.router.navigate(['user-dashboard']);
+      this.router.navigate(['']);
       this.loading=false;
     }, 1000)
   }

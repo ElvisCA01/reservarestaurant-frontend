@@ -1,10 +1,10 @@
 
   <app-header></app-header>
-  <div class="grid">
-    <div>
+  <div class="grid grid-cols-6">
+    <div class="col-span-1">
       <app-sidebar *ngIf="login.isLoggedIn()"></app-sidebar>
     </div>
-    <div>
-      <img class="mx-auto mt-5 h-96" src="https://scontent.ftru2-1.fna.fbcdn.net/v/t39.30808-6/264202079_4798470960208898_6788535384045248688_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=8bfeb9&_nc_eui2=AeH6Fvas91lFO_-eQytP_3NYyn8UIUt2honKfxQhS3aGial_iamPt_Uc7u2bKvuOJ7El160pelJpJ1VnErXDs0Hy&_nc_ohc=hHJ_8E90fC0AX-bXkqb&_nc_ht=scontent.ftru2-1.fna&oh=00_AfBWNMbowcevuBfssK-crOB6ptqbm5gfSXMDezsSTBXJsg&oe=63A30887">
+    <div class="col-span-5 xl:container 2xl:mx-auto lg:py-16 lg:px-20 md:py-12 md:px-6 py-9 px-4">
+      <app-page-content></app-page-content>
     </div>
   </div>  <router-outlet></router-outlet>

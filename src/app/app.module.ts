@@ -59,6 +59,7 @@ import {NewReservaComponent} from "./pages/DoReserva/reservas/new-reserva/new-re
 import {FormReservaComponent} from "./pages/DoReserva/reservas/shared/form-reserva/form-reserva.component";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatAutocompleteModule} from "@angular/material/autocomplete";
+import { PageContentComponent } from './shell/page-content/page-content.component';
 
 
 @NgModule({
@@ -90,6 +91,7 @@ import {MatAutocompleteModule} from "@angular/material/autocomplete";
     SidebarComponent,
     NewReservaComponent,
     FormReservaComponent,
+    PageContentComponent,
   ],
   imports: [
     BrowserModule,
