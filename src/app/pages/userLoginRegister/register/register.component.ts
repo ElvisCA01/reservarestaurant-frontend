@@ -22,19 +22,17 @@ export class RegisterComponent implements OnInit {
   constructor(private registerService:RegisterServiceService) { }
 
   formSubmit(){
-    console.log(this.user);
     if(this.user.username == '' || this.user.username == null){
       alert("El nombre de usuario es requerido");
       return;
     }
     this.registerService.añadirUsuario(this.user)
       .subscribe(res=>{
-        console.log(res);
         Swal.fire(
           'Registrado Correctamente',
           'Gracias!',
           'success'
-        )      },error => {
+        ) },error => {
         console.log(error);
       })
   }

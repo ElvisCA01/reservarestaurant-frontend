@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {AdminBookingService} from '../../../../services/admin/admin-booking.service'
 import {Title} from "@angular/platform-browser";
+import Swal from "sweetalert2";
 
 @Component({
   selector: 'app-new-reserva',
@@ -19,9 +20,14 @@ export class NewReservaComponent implements OnInit {
   }
 
   create(reserva: any){
+
     this.service.agregarReserva(reserva).subscribe((res) => {
-      console.log(res);
-      this.router.navigate(['/']);
+        Swal.fire(
+          'Reserva hecha correctamente',
+          'Gracias por preferirnos!',
+          'success'
+        )
+        this.router.navigate(['/']);
     },
     (err) => {
       console.log(err);

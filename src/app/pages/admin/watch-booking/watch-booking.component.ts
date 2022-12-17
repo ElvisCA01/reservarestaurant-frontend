@@ -5,6 +5,7 @@ import {AdminBookingService} from "../../../services/admin/admin-booking.service
 import {ActivatedRoute, Router} from "@angular/router";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import { Reserva } from 'src/app/classes/reserva/reserva.model';
+import {Location} from "@angular/common";
 
 @Component({
   selector: 'app-watch-booking',
@@ -18,7 +19,7 @@ export class WatchBookingComponent implements OnInit {
   dataSource: MatTableDataSource<string>;
   displayedColumns: string[] = ['id','categoria','nombre','precio', 'cantidad', 'total'];
 
-  constructor(public service: AdminBookingService ,private activeRoute:ActivatedRoute,private _snackBar: MatSnackBar,private fb:FormBuilder, private _snackbar:MatSnackBar,private router:Router) {
+  constructor(private location:Location,public service: AdminBookingService ,private activeRoute:ActivatedRoute,private _snackBar: MatSnackBar,private fb:FormBuilder, private _snackbar:MatSnackBar,private router:Router) {
 
     this.activeRoute.paramMap.subscribe(paramMap =>{
       this.id = Number(paramMap.get('id'));
@@ -30,10 +31,11 @@ export class WatchBookingComponent implements OnInit {
    })
   }
 
-
-
   ngOnInit(): void {
 
   }
 
+  back():void{
+    this.location.back();
+  }
 }

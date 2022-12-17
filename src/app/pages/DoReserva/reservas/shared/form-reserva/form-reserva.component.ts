@@ -7,6 +7,7 @@ import { AdminBookingService } from "../../../../../services/admin/admin-booking
 import { Plato } from "../../../../../classes/plato/plato.model";
 import { ReservaItem } from "../../../../../classes/reserva/reserva-item.model";
 import { Reserva } from "../../../../../classes/reserva/reserva.model";
+import {Location} from "@angular/common";
 
 @Component({
   selector: 'app-form-reserva',
@@ -32,7 +33,8 @@ export class FormReservaComponent implements OnInit {
   @Output() onSave: EventEmitter<any> = new EventEmitter();
 
   constructor(private serviceReserva: AdminBookingService,
-              private servicePlato: SharedPlatoService) { }
+              private servicePlato: SharedPlatoService,
+              private location:Location) { }
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -100,5 +102,7 @@ export class FormReservaComponent implements OnInit {
     //console.log(reserva);
     this.onSave.emit(reserva);
   }
-
+  back():void{
+    this.location.back();
+  }
 }

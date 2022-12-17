@@ -21,7 +21,7 @@ import {FormBuilder, FormGroup, Validators} from "@angular/forms";
   styleUrls: ['./search-booking.component.scss'],
 })
 export class SearchBookingComponent implements OnInit, AfterViewInit{
-  displayedColumns: string[] = ['id', 'nombre','papellido','sapellido', 'personas', 'evento','fecha','horario','total'];
+  displayedColumns: string[] = ['id', 'nombre','papellido','sapellido', 'personas', 'evento','fecha','horario','total','acciones'];
   Reservas: Reserva[];
   form: FormGroup;
 
@@ -56,5 +56,7 @@ export class SearchBookingComponent implements OnInit, AfterViewInit{
     const filterValue = (event.target as HTMLInputElement).value;
     this.finalData.filter = filterValue.trim().toLowerCase();
   }
-
+  verReserva(id:number){
+    this.router.navigate(['watchBooking',id]);
+  }
 }

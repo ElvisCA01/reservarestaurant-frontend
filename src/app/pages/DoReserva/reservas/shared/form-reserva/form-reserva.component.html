@@ -1,4 +1,4 @@
-<div style="margin-left: 550px; width: 450px" class="text-base shadow-md px-8 pt-6 pb-8 w-7/12 flex flex-col bg-gray-200 my-10 max-w-md rounded-3xl text-gray-500">
+<div style="margin-left: 550px; width: 450px" class="text-base shadow-md px-8 pt-6 pb-8 w-7/12 flex flex-col bg-gray-100 my-10 max-w-md rounded-3xl text-gray-500">
     <form autocomplete="off" [formGroup]="form" (ngSubmit)="save()" #frmOrder="ngForm">
       <div>
       <mat-form-field class="w-11/12">
@@ -45,7 +45,7 @@
     </form>
 </div>
 
-<div style="margin-left: 550px; width: 450px" class="text-base shadow-md px-8 pt-6 pb-8 w-7/12 flex flex-col bg-gray-200 my-10 w-9/12 rounded-3xl text-gray-500">
+<div style="margin-left: 550px; width: 450px" class="text-base shadow-md px-8 pt-6 pb-8 w-7/12 flex flex-col bg-gray-100 my-10 w-9/12 rounded-3xl text-gray-500">
     <form autocomplete="off" [formGroup]="form" (ngSubmit)="save()" #frmOrder="ngForm">
         <div>
             <mat-form-field appearance="outline" class="w-11/12">
@@ -123,7 +123,7 @@
       </table>
     </form>
     <div class="text-end mt-5">
-        <button mat-raised-button color="primary" routerLink="/adminBooking">
+        <button mat-raised-button color="primary" (click)="back()">
           Atras
         </button>
       </div>

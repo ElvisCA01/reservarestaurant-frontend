@@ -57,7 +57,8 @@ export class AdminBookingComponent implements OnInit {
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Sí, eliminar!'
+      confirmButtonText: 'Sí, eliminar!',
+      cancelButtonText: 'Cancelar'
     }).then((result:any) => {
       if (result.isConfirmed) {
         this.api.eliminarReserva(id).subscribe(()=>{

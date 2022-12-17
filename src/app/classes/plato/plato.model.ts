@@ -4,3 +4,5 @@ export class Plato{
     nombre: string;
     price: number;
 }
+
+

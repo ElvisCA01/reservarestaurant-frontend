@@ -1,5 +1,5 @@
 <!-- component -->
-<nav style="height: 680px" class="flex flex-col bg-gray-200 w-64 px-4 tex-gray-900 border border-gray-50">
+<nav class="flex flex-col bg-gray-200 w-64 px-4 tex-gray-900 border border-gray-50 h-screen">
   <div class="flex flex-wrap mt-8">
     <div class="w-1/2">
       <img
@@ -8,24 +8,22 @@
       />
     </div>
     <div class="w-1/2">
-      <span class="font-semibold text-black">Hola  {{user.authorities[0].authority}} {{user.username}}</span>
+      <span class="font-semibold text-black">Hola usuario {{user.authorities[0].authority}} {{user.username}}</span>
     </div>
   </div>
   <div class="mt-10">
     <ul class="ml-4">
-      <li class="mb-2 px-4 py-4 text-black flex flex-row  border-gray-300 hover:text-black hover:bg-gray-300  hover:font-bold rounded rounded-lg">
-              <span>
+      <li routerLink="/profile" class="mb-2 px-4 py-4 text-black flex cursor-pointer flex-row border-gray-300 hover:text-black hover:bg-gray-300 hover:font-bold rounded rounded-lg">
                 <svg class="fill-current h-5 w-5 " viewBox="0 0 24 24">
                   <path d="M16 20h4v-4h-4m0-2h4v-4h-4m-6-2h4V4h-4m6 4h4V4h-4m-6 10h4v-4h-4m-6 4h4v-4H4m0 10h4v-4H4m6 4h4v-4h-4M4 8h4V4H4v4z"></path>
                 </svg>
-              </span>
-        <a *ngIf="login.isLoggedIn()" routerLink="/profile">
+        <a>
           <span class="ml-2">Perfil</span>
         </a>
       </li>
     </ul>
   </div>
-  <div class="" *ngIf="login.isLoggedIn() && isLoggedInAdmin()">
+  <div class="" *ngIf="isLoggedInAdmin()">
     <ul class="ml-4">
       <li class="mb-2 px-4 py-4 text-black flex flex-row  border-gray-300 hover:text-black   hover:bg-gray-300  hover:font-bold rounded rounded-lg">
               <span>
@@ -54,3 +52,5 @@
     </ul>
   </div>
 </nav>
+
+

@@ -4,6 +4,7 @@ import {Plato} from '../../../../classes/plato/plato.model';
 import {SharedPlatoService} from '../shared/shared.plato.service';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-list-plato',
@@ -16,7 +17,7 @@ export class ListPlatoComponent implements OnInit {
   displayedColumns: string[] = ['id','categoria','nombre','precio','acciones'];
   dataSource: MatTableDataSource<Plato>;
 
-  constructor(private service: SharedPlatoService, private router:Router) { }
+  constructor(private service: SharedPlatoService, private router:Router,private _snackBar:MatSnackBar) { }
 
   ngOnInit(): void {
     this.getPlatos();
@@ -59,5 +60,4 @@ export class ListPlatoComponent implements OnInit {
       }
     })
   }
-
 }

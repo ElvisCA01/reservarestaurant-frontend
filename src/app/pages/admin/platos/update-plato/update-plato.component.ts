@@ -14,7 +14,7 @@ export class UpdatePlatoComponent implements OnInit {
   private id: number;
   form: FormGroup;
 
-  categoria: any[] = ['Platillos','Postres','Bebidas','Adicionales'];
+  categoria: any[] = ['Entradas','Jugos','Platos a la carta','Postres','Gaseosas','Sopas','Mariscos'];
 
   constructor(public service: SharedPlatoService,
     private router:Router, public activeRoute:ActivatedRoute) { }
@@ -30,8 +30,8 @@ export class UpdatePlatoComponent implements OnInit {
     nombre: new FormControl(),
     price: new FormControl(),
   });
-
   }
+
 
   save(){
     let plato = new Plato;
