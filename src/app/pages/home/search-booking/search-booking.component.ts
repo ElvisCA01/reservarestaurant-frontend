@@ -52,5 +52,9 @@ export class SearchBookingComponent implements OnInit, AfterViewInit{
     this.CargarBookings();
   }
 
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.finalData.filter = filterValue.trim().toLowerCase();
+  }
 
 }

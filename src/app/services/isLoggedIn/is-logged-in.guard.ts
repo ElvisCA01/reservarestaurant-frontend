@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import {ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree} from '@angular/router';
 import { Observable } from 'rxjs';
 import {LoginServiceService} from "../login/login-service.service";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Injectable({
   providedIn: 'root'
 })
 export class IsLoggedInGuard implements CanActivate {
 
-  constructor(private loginService: LoginServiceService, private router: Router) {
+  constructor(private _snackBar: MatSnackBar,private loginService: LoginServiceService, private router: Router) {
   }
   canActivate(
     route: ActivatedRouteSnapshot,
@@ -16,6 +17,11 @@ export class IsLoggedInGuard implements CanActivate {
     if(this.loginService.isLoggedIn()){
       return true;
     }else {
+      this._snackBar.open('Necesitas estar logueado','Aceptar',{
+        duration: 5000,
+        horizontalPosition: 'center',
+        verticalPosition: "bottom"
+      })
       this.router.navigate(['/login'])
       return false;
     }  }

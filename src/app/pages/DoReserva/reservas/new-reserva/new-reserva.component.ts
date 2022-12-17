@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {AdminBookingService} from '../../../../services/admin/admin-booking.service'
+import {Title} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-new-reserva',
@@ -10,7 +11,9 @@ import {AdminBookingService} from '../../../../services/admin/admin-booking.serv
 export class NewReservaComponent implements OnInit {
 
   constructor(private service: AdminBookingService,
-              private router: Router) { }
+              private router: Router, private titulo: Title) {
+    titulo.setTitle("Nueva Reserva")
+  }
 
   ngOnInit(): void {
   }
@@ -18,7 +21,7 @@ export class NewReservaComponent implements OnInit {
   create(reserva: any){
     this.service.agregarReserva(reserva).subscribe((res) => {
       console.log(res);
-      this.router.navigate(['/adminBooking']);
+      this.router.navigate(['/']);
     },
     (err) => {
       console.log(err);

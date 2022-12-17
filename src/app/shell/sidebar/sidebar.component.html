@@ -1,0 +1,56 @@
+<!-- component -->
+<nav style="height: 680px" class="flex flex-col bg-gray-200 w-64 px-4 tex-gray-900 border border-gray-50">
+  <div class="flex flex-wrap mt-8">
+    <div class="w-1/2">
+      <img
+        src="https://i.pinimg.com/736x/f1/0f/f7/f10ff70a7155e5ab666bcdd1b45b726d.jpg"
+        class="mx-auto w-20 h-20 rounded-full"
+      />
+    </div>
+    <div class="w-1/2">
+      <span class="font-semibold text-black">Hola  {{user.authorities[0].authority}} {{user.username}}</span>
+    </div>
+  </div>
+  <div class="mt-10">
+    <ul class="ml-4">
+      <li class="mb-2 px-4 py-4 text-black flex flex-row  border-gray-300 hover:text-black hover:bg-gray-300  hover:font-bold rounded rounded-lg">
+              <span>
+                <svg class="fill-current h-5 w-5 " viewBox="0 0 24 24">
+                  <path d="M16 20h4v-4h-4m0-2h4v-4h-4m-6-2h4V4h-4m6 4h4V4h-4m-6 10h4v-4h-4m-6 4h4v-4H4m0 10h4v-4H4m6 4h4v-4h-4M4 8h4V4H4v4z"></path>
+                </svg>
+              </span>
+        <a *ngIf="login.isLoggedIn()" routerLink="/profile">
+          <span class="ml-2">Perfil</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="" *ngIf="login.isLoggedIn() && isLoggedInAdmin()">
+    <ul class="ml-4">
+      <li class="mb-2 px-4 py-4 text-black flex flex-row  border-gray-300 hover:text-black   hover:bg-gray-300  hover:font-bold rounded rounded-lg">
+              <span>
+               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="inline w-6 h-6">
+                 <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+               </svg>
+              </span>
+        <a routerLink="/plato">
+          <span class="ml-2">Platos</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="" *ngIf="login.isLoggedIn() && isLoggedInAdmin()">
+    <ul class="ml-4">
+      <li class="mb-2 px-4 py-4 text-black flex flex-row  border-gray-300 hover:text-black   hover:bg-gray-300  hover:font-bold rounded rounded-lg">
+              <span>
+               <svg xmlns="http://www.w3.org/2000/svg" width="1.5rem" height="1.5rem" fill="currentColor" class="bi bi-braces inline" viewBox="0 0 16 16">
+                <path d="M2.114 8.063V7.9c1.005-.102 1.497-.615 1.497-1.6V4.503c0-1.094.39-1.538 1.354-1.538h.273V2h-.376C3.25 2 2.49 2.759 2.49 4.352v1.524c0 1.094-.376 1.456-1.49 1.456v1.299c1.114 0 1.49.362 1.49 1.456v1.524c0 1.593.759 2.352 2.372 2.352h.376v-.964h-.273c-.964 0-1.354-.444-1.354-1.538V9.663c0-.984-.492-1.497-1.497-1.6zM13.886 7.9v.163c-1.005.103-1.497.616-1.497 1.6v1.798c0 1.094-.39 1.538-1.354 1.538h-.273v.964h.376c1.613 0 2.372-.759 2.372-2.352v-1.524c0-1.094.376-1.456 1.49-1.456V7.332c-1.114 0-1.49-.362-1.49-1.456V4.352C13.51 2.759 12.75 2 11.138 2h-.376v.964h.273c.964 0 1.354.444 1.354 1.538V6.3c0 .984.492 1.497 1.497 1.6z"/>
+              </svg>
+              </span>
+        <a routerLink="/adminBooking">
+          <span class="ml-2">Administración</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>

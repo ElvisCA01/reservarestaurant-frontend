@@ -19,8 +19,6 @@ import {NewPlatoComponent} from "../app/pages/admin/platos/new-plato/new-plato.c
 import {UpdatePlatoComponent} from "../app/pages/admin/platos/update-plato/update-plato.component"
 
 import { NewReservaComponent } from "../app/pages/DoReserva/reservas/new-reserva/new-reserva.component";
-import {ReservaComponent} from "./pages/DoReserva/reserva/reserva.component";
-import {ComidasComponent} from "./pages/DoReserva/comidas/comidas.component";
 import {RegisterComponent} from "./pages/userLoginRegister/register/register.component";
 import {DashboardComponent} from "./pages/admin/dashboard.component";
 import {UserDashboardComponent} from "./pages/user/user-dashboard.component";
@@ -84,19 +82,10 @@ const routes: Routes = [
     canActivate: [AdminGuard]
   },
   {
-    path: 'reserva1',
-    component: ReservaComponent,
-    pathMatch: 'full'
-  },
-  {
     path: 'reserva',
     component: NewReservaComponent,
-    pathMatch: 'full'
-  },
-  {
-    path: 'comidas',
-    component: ComidasComponent,
-    pathMatch: 'full'
+    pathMatch: 'full',
+    canActivate:[IsLoggedInGuard]
   },
   {
     path: 'editBooking/:id',
@@ -163,7 +152,8 @@ const routes: Routes = [
   },
   {
     path: 'comentarios/addComment',
-    component: AddCommentComponent
+    component: AddCommentComponent,
+    canActivate: [IsLoggedInGuard]
   }
 ];
 

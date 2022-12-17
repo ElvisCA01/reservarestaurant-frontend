@@ -12,7 +12,7 @@ import {Plato} from '../../../../../classes/plato/plato.model';
 export class FormPlatoComponent implements OnInit {
 
   form: FormGroup;
-  categoria: any[] = ['Platillos','Postres','Bebidas','Adicionales'];
+  categoria: any[] = ['Entradas','Jugos','Platos a la carta','Postres','Gaseosas','Sopas','Mariscos'];
 
   @Input() plato: Plato = new Plato();
   @Output() onSubmit: EventEmitter<any> = new EventEmitter();

@@ -2,24 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import {LoginServiceService} from "../../services/login/login-service.service";
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  selector: 'app-sidebar',
+  templateUrl: './sidebar.component.html',
+  styleUrls: ['./sidebar.component.scss']
 })
-export class DashboardComponent implements OnInit {
+export class SidebarComponent implements OnInit {
+  user: any = null;
 
-
-  user: any=null;
-
-  constructor(public login: LoginServiceService) { }
+  constructor(public login: LoginServiceService) {
+  }
 
   ngOnInit(): void {
     this.user = this.login.getUser();
-  }
 
-  public logout(){
-    this.login.logout();
-    window.location.reload();
   }
 
   isLoggedInAdmin() {
@@ -29,4 +24,5 @@ export class DashboardComponent implements OnInit {
       return false;
     }
   }
+
 }

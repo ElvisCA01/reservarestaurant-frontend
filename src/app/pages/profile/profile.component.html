@@ -1,46 +1,45 @@
 <app-header></app-header>
-<div style="margin-left: 550px; width: 450px; weight: 500px" class="overflow justify-center text-base px-8 pt-6 pb-8 my-10 rounded-3xl">
-  <mat-card>
-    <mat-card-content>
-        <div class="font-sans w-full flex flex-row justify-center items-center">
-          <div class="card w-96 mx-auto bg-white">
-            <img class="w-32 mx-auto rounded-full -mt-20 border-8 border-white" src="https://i.pinimg.com/736x/f1/0f/f7/f10ff70a7155e5ab666bcdd1b45b726d.jpg" alt="">
-            <div class="text-center mt-2 text-3xl font-medium">Perfil del usuario</div>
-            <hr class="mt-8">
-            <div class="flex p-4">
-              <table class="table text-center font-medium">
-                <tr>
-                  <td>Nombre de usuario:</td>
-                  <td>{{user.username}}</td>
-                </tr>
-                <tr>
-                  <td>ID</td>
-                  <td>{{user.id}}</td>
-                </tr>
-                <tr>
-                  <td>Teléfono</td>
-                  <td>{{user.telefono}}</td>
-                </tr>
-                <tr>
-                  <td>Nombre</td>
-                  <td>{{user.nombre}}</td>
-                </tr>
-                <tr>
-                  <td>Apellido</td>
-                  <td>{{user.apellido}}</td>
-                </tr>
-                <tr>
-                  <td>Rol</td>
-                  <td>{{user.authorities[0].authority}}</td>
-                </tr>
-              </table>
+  <div style="width: 450px; height: 650px;" class="mt-5 2xl:container 2xl:mx-auto lg:py-16 lg:px-20 md:py-12 md:px-6 py-9 px-4">
+        <mat-card>
+          <mat-card-content>
+            <div class="font-sans w-full flex flex-row justify-center items-center">
+              <div class="card w-96 mx-auto bg-white">
+                <img class="w-32 mx-auto rounded-full -mt-20 border-8 border-white" src="https://i.pinimg.com/736x/f1/0f/f7/f10ff70a7155e5ab666bcdd1b45b726d.jpg" alt="">
+                <div class="text-center mt-2 text-3xl font-medium">Perfil del usuario</div>
+                <hr class="mt-8">
+                <div class="flex p-4">
+                  <table class="table text-center font-medium">
+                    <tr>
+                      <td>Nombre de usuario:</td>
+                      <td>{{user.username}}</td>
+                    </tr>
+                    <tr>
+                      <td>ID</td>
+                      <td>{{user.id}}</td>
+                    </tr>
+                    <tr>
+                      <td>Teléfono</td>
+                      <td>{{user.telefono}}</td>
+                    </tr>
+                    <tr>
+                      <td>Nombre</td>
+                      <td>{{user.nombre}}</td>
+                    </tr>
+                    <tr>
+                      <td>Apellido</td>
+                      <td>{{user.apellido}}</td>
+                    </tr>
+                    <tr>
+                      <td>Rol</td>
+                      <td>{{user.authorities[0].authority}}</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      <mat-card-actions>
-      </mat-card-actions>
-    </mat-card-content>
-  </mat-card>
+            <mat-card-actions>
+            </mat-card-actions>
+          </mat-card-content>
+        </mat-card>
+
 </div>
-
-

@@ -27,9 +27,6 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatDialogModule} from '@angular/material/dialog';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatAutocompleteModule } from '@angular/material/autocomplete';
-
 
 
 //componentes
@@ -46,8 +43,6 @@ import {LoginComponent} from "./pages/userLoginRegister/login/login.component";
 import { AdminBookingComponent } from './pages/admin/admin-booking/admin-booking.component';
 import { EditBookingComponent } from './pages/admin/edit-booking/edit-booking.component';
 import { WatchBookingComponent } from './pages/admin/watch-booking/watch-booking.component';
-import { ReservaComponent } from './pages/DoReserva/reserva/reserva.component';
-import { ComidasComponent } from './pages/DoReserva/comidas/comidas.component';
 import { RegisterComponent } from './pages/userLoginRegister/register/register.component';
 import {authInterceptorProviders} from "./services/auth.interceptor";
 import { DashboardComponent } from './pages/admin/dashboard.component';
@@ -59,9 +54,11 @@ import { ListPlatoComponent } from './pages/admin/platos/list-plato/list-plato.c
 import { FormPlatoComponent } from './pages/admin/platos/shared/form-plato/form-plato.component';
 import { CommentsComponent } from './pages/home/comments/listComments/comments.component';
 import { AddCommentComponent } from './pages/home/comments/add-comment/add-comment.component';
-import { NewReservaComponent } from './pages/DoReserva/reservas/new-reserva/new-reserva.component';
-import { FormReservaComponent } from './pages/DoReserva/reservas/shared/form-reserva/form-reserva.component';
-
+import {SidebarComponent} from "./shell/sidebar/sidebar.component";
+import {NewReservaComponent} from "./pages/DoReserva/reservas/new-reserva/new-reserva.component";
+import {FormReservaComponent} from "./pages/DoReserva/reservas/shared/form-reserva/form-reserva.component";
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatAutocompleteModule} from "@angular/material/autocomplete";
 
 
 @NgModule({
@@ -80,8 +77,6 @@ import { FormReservaComponent } from './pages/DoReserva/reservas/shared/form-res
     AdminBookingComponent,
     EditBookingComponent,
     WatchBookingComponent,
-    ReservaComponent,
-    ComidasComponent,
     RegisterComponent,
     DashboardComponent,
     UserDashboardComponent,
@@ -92,6 +87,7 @@ import { FormReservaComponent } from './pages/DoReserva/reservas/shared/form-res
     FormPlatoComponent,
     CommentsComponent,
     AddCommentComponent,
+    SidebarComponent,
     NewReservaComponent,
     FormReservaComponent,
   ],
@@ -102,14 +98,12 @@ import { FormReservaComponent } from './pages/DoReserva/reservas/shared/form-res
     MatCheckboxModule,
     MatRadioModule,
     FormsModule,
-    MatAutocompleteModule,
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
     MatDatepickerModule,
     MatNativeDateModule,
     MatCardModule,
-    MatToolbarModule,
     HttpClientModule,
     MatTableModule,
     MatIconModule,
@@ -122,6 +116,8 @@ import { FormReservaComponent } from './pages/DoReserva/reservas/shared/form-res
     MatPaginatorModule,
     MatGridListModule,
     MatDialogModule,
+    MatToolbarModule,
+    MatAutocompleteModule,
   ],
   providers: [
     authInterceptorProviders
