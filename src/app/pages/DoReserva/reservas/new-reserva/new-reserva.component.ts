@@ -27,7 +27,7 @@ export class NewReservaComponent implements OnInit {
           'Gracias por preferirnos!',
           'success'
         )
-        this.router.navigate(['/']);
+        this.router.navigate(['/adminBooking']);
     },
     (err) => {
       console.log(err);

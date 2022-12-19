@@ -9,7 +9,7 @@ export class Reserva {
   sapellido:string;
   horario: string;
   evento: string;
-  fecha: String;
+  fecha: string;
   items: ReservaItem[];
 
 }

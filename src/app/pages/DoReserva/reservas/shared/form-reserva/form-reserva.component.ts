@@ -44,6 +44,7 @@ export class FormReservaComponent implements OnInit {
       sapellido: new FormControl(),
       horario: new FormControl(),
       evento: new FormControl(),
+      fecha: new FormControl(),
       plato: this.myControlPlato,
       quantity: new FormControl(),
     });
@@ -93,13 +94,20 @@ export class FormReservaComponent implements OnInit {
   save() {
     let reserva = new Reserva();
     reserva.personas = this.form.value['personas'];
+
+    var fecha = this.form.value['fecha'];
+    var resFecha = fecha.split("-");
+    var reversedFecha = resFecha.reverse(); 
+    var fechaOb=reversedFecha.join('/');
+
     reserva.nombre = this.form.value['nombre'];
     reserva.papellido = this.form.value['papellido'];
     reserva.sapellido = this.form.value['sapellido'];
     reserva.horario = this.form.value['horario'];
     reserva.evento = this.form.value['evento'];
+    reserva.fecha = fechaOb;
     reserva.items = this.orderLines;
-    //console.log(reserva);
+    //console.log(fechaOb);
     this.onSave.emit(reserva);
   }
   back():void{
