@@ -17,7 +17,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./admin-booking.component.scss']
 })
 export class AdminBookingComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'nombre','papellido','sapellido', 'personas', 'evento','fecha','horario','total','acciones'];
+  displayedColumns: string[] = ['id', 'nombre','papellido','sapellido', 'personas', 'evento','fecha','horario','total', 'estado','acciones'];
   Reservas: Reserva[];
   @ViewChild(MatPaginator) _paginator!:MatPaginator;
   @ViewChild(MatSort) _sort!:MatSort;

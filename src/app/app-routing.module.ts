@@ -18,6 +18,8 @@ import {ListPlatoComponent} from "../app/pages/admin/platos/list-plato/list-plat
 import {NewPlatoComponent} from "../app/pages/admin/platos/new-plato/new-plato.component"
 import {UpdatePlatoComponent} from "../app/pages/admin/platos/update-plato/update-plato.component"
 
+import { NewPagoComponent } from './pages/DoReserva/Pago/new-pago/new-pago.component'
+
 import { NewReservaComponent } from "../app/pages/DoReserva/reservas/new-reserva/new-reserva.component";
 import {RegisterComponent} from "./pages/userLoginRegister/register/register.component";
 import {DashboardComponent} from "./pages/admin/dashboard.component";
@@ -84,6 +86,12 @@ const routes: Routes = [
   {
     path: 'reserva',
     component: NewReservaComponent,
+    pathMatch: 'full',
+    canActivate:[IsLoggedInGuard]
+  },
+  {
+    path: 'pago',
+    component: NewPagoComponent,
     pathMatch: 'full',
     canActivate:[IsLoggedInGuard]
   },

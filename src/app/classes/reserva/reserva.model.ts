@@ -10,6 +10,7 @@ export class Reserva {
   horario: string;
   evento: string;
   fecha: string;
+  estado: string;
   items: ReservaItem[];
 
 }

@@ -60,6 +60,8 @@ import {FormReservaComponent} from "./pages/DoReserva/reservas/shared/form-reser
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatAutocompleteModule} from "@angular/material/autocomplete";
 import { PageContentComponent } from './shell/page-content/page-content.component';
+import { NewPagoComponent } from './pages/DoReserva/Pago/new-pago/new-pago.component';
+import { FormPagoComponent } from './pages/DoReserva/Pago/shared/form-pago/form-pago.component';
 
 
 @NgModule({
@@ -92,6 +94,8 @@ import { PageContentComponent } from './shell/page-content/page-content.componen
     NewReservaComponent,
     FormReservaComponent,
     PageContentComponent,
+    NewPagoComponent,
+    FormPagoComponent,
   ],
   imports: [
     BrowserModule,

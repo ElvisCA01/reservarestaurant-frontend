@@ -1,0 +1,83 @@
+<div class="row">
+    <div class="col-md-offset-3 mx-auto">
+      <form (ngSubmit)="save()" autocomplete="off" [formGroup]="form" #frmLibro="ngForm">
+
+        <mat-form-field appearance="outline" class="d-block">
+            <mat-label>Titular</mat-label>
+            <input
+              matInput
+              type="text"
+              placeholder="Titular"
+              formControlName="titular"
+            />
+            <mat-error *ngIf="form.hasError('required', 'nombre')">
+              Este campo es obligatorio
+            </mat-error>
+          </mat-form-field>
+
+        <mat-form-field class="d-block">
+          <mat-label>Tipo de tarjeta</mat-label>
+          <mat-select formControlName="tipo">
+            <mat-option *ngFor="let tipo of tipo" [value]="tipo">
+              {{tipo}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="form.hasError('required', 'categoria')">
+            Este campo es obligatorio
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="d-block">
+            <mat-label>Numero tarjeta</mat-label>
+            <input
+              matInput
+              type="text"
+              placeholder="Numero tarjeta"
+              formControlName="numero"
+            />
+            <mat-error *ngIf="form.hasError('required', 'nombre')">
+              Este campo es obligatorio
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="d-block">
+            <mat-label>Fecha Caducidad</mat-label>
+            <input
+              matInput
+              type="text"
+              placeholder="Fecha Caducidad"
+              formControlName="fechaCaducidad"
+            />
+            <mat-error *ngIf="form.hasError('required', 'nombre')">
+              Este campo es obligatorio
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="d-block">
+            <mat-label>CVV</mat-label>
+            <input
+              matInput
+              type="text"
+              placeholder="CVV"
+              formControlName="cvv"
+            />
+            <mat-error *ngIf="form.hasError('required', 'nombre')">
+              Este campo es obligatorio
+            </mat-error>
+          </mat-form-field>
+
+        <button mat-raised-button routerLink="/reserva" color="primary">Cancelar</button>
+
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          class="ms-2"
+          [disabled]="frmLibro.invalid"
+        >
+          Guardar
+        </button>
+      </form>
+    </div>
+  </div>
+
